@@ -1,0 +1,30 @@
+.indexGrid {
+    display: grid;
+    grid-template-columns: [main-start] 1fr [main-end f-start d-start] 1fr [f-end d-end];
+    grid-template-rows: [main-start f-start] 1fr [f-end d-start] 150px [main-end d-end];
+
+    height: 100%;
+    gap: 20px;
+}
+
+@media screen and (max-width: theme(screens.md)) {
+    .indexGrid {
+        grid-template-columns: [main-start f-start] 2.4fr [f-end d-start] 1fr [main-end d-end];
+        grid-template-rows: [main-start] 1.7fr [main-end f-start d-start] 1fr [f-end d-end];
+    }
+}
+
+.main {
+    grid-column: main-start / main-end;
+    grid-row: main-start / main-end;
+}
+
+.fCont {
+    grid-column: f-start / f-end;
+    grid-row: f-start / f-end;
+}
+
+.dCont {
+    grid-column: d-start / d-end;
+    grid-row: d-start / d-end;
+}
