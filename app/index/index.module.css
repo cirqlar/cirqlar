@@ -21,7 +21,3 @@
 .main > div, .main > section {
 	scroll-snap-align: start;
 }
-
-@media screen and (max-width: theme(screens.md)) {
-	
-}
