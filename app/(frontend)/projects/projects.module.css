@@ -1,0 +1,53 @@
+.grid {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 1fr 120px;
+	
+	width: 100%;
+	height: 100%;
+	padding-top: 32px;
+	overflow: hidden;
+}
+
+.projects {
+	display: flex;
+	scroll-snap-type: x mandatory;
+
+	align-items: center;
+	gap: 96px;
+	overflow-x: auto;
+
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.projects::-webkit-scrollbar {
+	display: none;
+}
+
+.projects > .project {
+	scroll-snap-align: center;
+}
+
+.project {
+	max-width: 600px;
+	width: 75%;
+	aspect-ratio: 16/10;
+
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 1fr 80px;
+	overflow: hidden;
+	border-radius: 20px;
+
+	flex-shrink: 0;
+}
+
+.project:first-child {
+	margin-left: 256px;
+}
+
+.project:last-child {
+	margin-right: 256px;
+}
