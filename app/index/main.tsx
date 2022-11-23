@@ -3,7 +3,7 @@ import { LATO_BOLD } from "../globals/font";
 
 const MainSection = () => {
 	return (
-		<div>
+		<div id="main">
 			<div>
 			</div>
 			<div className="w-min relative pt-4 h-full mx-auto flex flex-col justify-center">

@@ -2,7 +2,7 @@ import { LATO_BOLD } from "../globals/font";
 
 const OtherSection = () => {
 	return (
-		<section>
+		<section id="other">
 			<div></div>
 			<div className="w-[480px] relative h-full mx-auto flex flex-col justify-end items-center pb-28">
 				<h2 className={`${LATO_BOLD.className} text-8xl mb-5`}>Other</h2>

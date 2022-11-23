@@ -3,7 +3,7 @@ import { LATO_BOLD } from "../globals/font";
 
 const FrontendSection = () => {
 	return (
-		<section>
+		<section id="frontend">
 			<div></div>
 			<div className="w-min relative h-full mx-auto flex flex-col justify-center">
 				<h2 className={`${LATO_BOLD.className} text-8xl mb-8`}>Frontend Development</h2>

@@ -67,6 +67,9 @@ const ProjectsPage = () => {
 						</div>
 					</div>
 				))}
+				<div id={"More...".replaceAll(/ |\./g, '-')} className={styles.project}>
+					
+				</div>
 			</div>
 			<div className="flex justify-center items-center">
 				{projects.map(({ name }, index) => (
