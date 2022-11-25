@@ -62,14 +62,14 @@ const MainContainer = () => {
 
 	return (
 		<div>
-			<div className="absolute inset-y-0 left-0 w-min flex justify-center items-center pl-12">
+			<div className="absolute max-sm:hidden inset-y-0 left-0 w-min flex justify-center items-center pl-12">
 				<button type="button" className={`text-white disabled:text-gray-400 ${page === 'main' ? 'hidden' : ''}`} disabled={page==='main'} onClick={scrollPrevious}>
 					<svg width="34" height="66" viewBox="0 0 34 66" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M33 65L1 33L33 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 					</svg>
 				</button>
 			</div>
-			<div className="absolute inset-y-0 right-0 w-min flex justify-center items-center pr-12">
+			<div className="absolute max-sm:hidden inset-y-0 right-0 w-min flex justify-center items-center pr-12">
 				<button type="button" className={`text-white disabled:text-gray-400 ${page === 'other' ? 'hidden' : ''}`} disabled={page==='other'} onClick={scrollNext}>
 					<svg width="34" height="66" viewBox="0 0 34 66" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1 1L33 33L1 65" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
