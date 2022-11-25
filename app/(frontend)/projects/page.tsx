@@ -45,10 +45,17 @@ const ProjectsPage = () => {
 	return (
 		<div className={styles.grid}>
 			<div className={styles.projects}>
-				{projects.map((project) => (
+				{projects.map((project, index) => (
 					<div key={project.url} id={project.name.replaceAll(/ |\./g, '-')} className={`${styles.project} @container/project`}>
 						<div className="min-h-0 overflow-hidden relative">
-							<Image src={project.image} alt={`${project.name} made with ${project.tools}`} />
+							<Image
+								src={project.image}
+								alt={`${project.name} made with ${project.tools}`}
+								priority={index === 0}
+								fill
+								className="object-cover"
+								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 60vw"
+							/>
 							<div className="absolute inset-0 bg-black bg-opacity-10" />
 						</div>
 						<div className={`${LATO_BOLD.className} flex justify-between items-center px-6 bg-white text-dark-purple`}>
