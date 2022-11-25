@@ -8,3 +8,10 @@
 	height: min-content;
 	gap: 32px;
 }
+
+@media not (min-width: theme(screens.md)) {
+	.grid {
+		grid-template-columns: 1fr;
+		gap: 8px;
+	}
+}

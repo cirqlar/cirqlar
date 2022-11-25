@@ -26,23 +26,25 @@ const experience = [
 
 const ExperiencePage = () => {
 	return (
-		<div className="w-full h-full flex justify-center items-center p-8">
+		<div className="w-full h-full overflow-y-auto md:flex justify-center items-center p-8">
 			<div className={styles.grid}>
 				{experience.map((exp) => (
 					<Fragment key={exp.company}>
 						<p
 							className={`
 								${LATO_BOLD.className}
-								h-10 px-3 flex items-center justify-self-end
+								h-8 lg:h-10 px-3 flex items-center
+								justify-self-start md:justify-self-end
 								bg-[#FFFFFF45] text-dark-purple
+								text-xs md:text-sm lg:text-base
 							`}
 						>
 							{exp.dates}
 						</p>
-						<div>
-							<p className={`${LATO_BOLD.className} text-4xl h-10 flex items-center mb-4`}>{exp.company}</p>
-							<p className="mb-4">Tools: {exp.tools}</p>
-							<p className="text-xl">{exp.description}</p>
+						<div className="max-md:mb-6 last:mb-0">
+							<p className={`${LATO_BOLD.className} text-2xl lg:text-4xl h-8 lg:h-10 flex items-center mb-2 md:mb-4`}>{exp.company}</p>
+							<p className="text-sm lg:text-base mb-2 md:mb-4">Tools: {exp.tools}</p>
+							<p className="text-base lg:text-xl">{exp.description}</p>
 						</div>
 					</Fragment>
 				))}

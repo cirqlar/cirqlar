@@ -14,14 +14,14 @@ const FrontendLayoutNav = () => {
 	const pathname = usePathname();
 
 	return (
-		<div className="w-full h-full flex justify-center items-center py-28">
-			<nav className="w-min h-min flex flex-col gap-12">
+		<div className="w-full md:h-full flex justify-center items-center md:py-28">
+			<nav className="w-min h-min flex md:flex-col max-md:items-baseline gap-6 md:gap-12 max-md:overflow-x-auto max-md:px-6">
 				{navigationLinks.map((navlink) => (
 					pathname === navlink.path
 						? (
-							<div key={navlink.name}>
-								<h2 className={`${LATO_BOLD.className} text-5xl mb-6`}>{navlink.name}</h2>
-								<p className="text-xl whitespace-nowrap">
+							<div key={navlink.name} className="max-md:order-first">
+								<h2 className={`${LATO_BOLD.className} text-3xl lg:text-5xl md:mb-6`}>{navlink.name}</h2>
+								<p className="text-base lg:text-xl whitespace-nowrap max-md:hidden">
 									Programming since 2015 <br />
 									Web development for over 3 years <br />
 									Employed as a frontend dev for 2+ years <br />
@@ -31,7 +31,7 @@ const FrontendLayoutNav = () => {
 						: (
 							<Link 
 								key={navlink.name}
-								className={`${LATO_BOLD.className} text-2xl`}
+								className={`${LATO_BOLD.className} text-lg lg:text-2xl`}
 								href={navlink.path}
 							>
 								{navlink.name}
@@ -39,7 +39,7 @@ const FrontendLayoutNav = () => {
 						)
 				))}
 				<a
-					className={`${LATO_BOLD.className} text-2xl flex items-center gap-3`}
+					className={`${LATO_BOLD.className} text-lg lg:text-2xl flex items-baseline md:items-center gap-3`}
 					href="https://docs.google.com/document/d/1-XeSw5DwV6fNbSBDyLa-e4PlD-jOGcJxDTRwaVfdhbA/edit?usp=sharing"
 					target="_blank"
 					rel="noreferrer"

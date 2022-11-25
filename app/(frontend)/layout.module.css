@@ -8,6 +8,13 @@
 	position: relative;
 }
 
+@media not (min-width: theme(screens.md)) {
+	.grid {
+		grid-template-columns: 100%;
+		grid-template-rows: 32px 1fr 128px;
+	}
+}
+
 .grid > div {
 	min-width: 0;
 	min-height: 0;

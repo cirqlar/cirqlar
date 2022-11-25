@@ -18,18 +18,19 @@ const skills = [
 
 const SkillsPage = () => {
 	return (
-		<div className="w-full h-full flex flex-col justify-center items-center gap-16 p-8">
+		<div className="w-full h-full overflow-y-auto flex flex-col md:justify-center items-center gap-8 max-md:px-4 md:gap-16 pt-8 pb-1 md:py-8">
 			<div className={styles.grid}>
 				{skills.map((skill) => (
-					<div className={`${LATO_BOLD.className} flex h-10 items-center gap-6`} key={skill.skill}>
+					<div className={`${LATO_BOLD.className} flex h-10 items-center gap-2 lg:gap-6`} key={skill.skill}>
 						<p
 							className={`
-								w-28 h-10 px-3
+								w-[70px] md:w-24 lg:w-28 h-8 lg:h-10 px-1 md:px-3
 								flex items-center justify-center justify-self-end
 								bg-[#FFFFFF45] text-dark-purple
+								text-xs md:text-sm lg:text-base
 							`}
 						>{skill.dates}</p>
-						<p className="text-3xl whitespace-nowrap">{skill.skill}</p>
+						<p className="md:text-xl lg:text-3xl whitespace-nowrap">{skill.skill}</p>
 					</div>
 				))}
 			</div>
