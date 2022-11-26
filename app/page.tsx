@@ -1,16 +1,20 @@
-import { MERRI_REGULAR } from "./globals/font";
+import MainSection from "./index/main";
+import FrontendSection from "./index/frontend";
+import OtherSection from "./index/other";
+import MainMovement from "./index/movement";
+
+import styles from './index/index.module.css';
 
 export default function Home() {
-  return (
-    <div>
-      <main>
-        <h1 className={MERRI_REGULAR.className}>Àyànfẹ</h1>
-        <p>I'm a frontend developer mostly working with frontend frameworks and tools including (but not limited to) React, Nextjs and Vuejs. I'm also learing 3d.</p>
-      </main>
+	return (
+		<>
+			<main className={`${styles.main} bg-dark-purple`} id="maincontainer">
+				<MainSection />
+				<FrontendSection />
+				<OtherSection />
+			</main>
 
-      <footer>
-  
-      </footer>
-    </div>
-  )
+			<MainMovement />
+		</>
+	)
 }

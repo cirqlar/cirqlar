@@ -1,7 +1,11 @@
-import { Lato, Merriweather_Sans } from "@next/font/google";
+import { Lato } from "@next/font/google";
 
 export const LATO_REGULAR = Lato({
-    weight: "400",
+	weight: "400",
+	subsets: ["latin"],
 });
 
-export const MERRI_REGULAR = Merriweather_Sans();
+export const LATO_BOLD = Lato({
+	weight: "700",
+	subsets: ["latin"],
+});

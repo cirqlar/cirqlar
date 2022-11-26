@@ -1,0 +1,17 @@
+.grid {
+	display: grid;
+	grid-template-columns: auto 1fr;
+
+
+	max-width: 600px;
+	width: 100%;
+	height: min-content;
+	gap: 32px;
+}
+
+@media not (min-width: theme(screens.md)) {
+	.grid {
+		grid-template-columns: 1fr;
+		gap: 8px;
+	}
+}
