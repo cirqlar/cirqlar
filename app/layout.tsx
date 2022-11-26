@@ -11,12 +11,25 @@ export default function RootLayout({
 		<html lang="en" className={LATO_REGULAR.className}>
 			<head>
 				<title>ÀYÀNFẸ</title>
-				<meta name="description" content="Ayanfe's website" />
+				<meta name="title" content="ÀYÀNFẸ" />
+				<meta name="description" content="Check out Ayanfe's website" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
+
 				<link rel="icon" href="/favicon.ico" />
-				<meta property="og:title" content="Ayanfe"/>
-				<meta property="og:description" content="Check out Ayanfe's website"/>
-				<meta name="twitter:card" content="sumary"/>
+
+				{/* <!-- Open Graph / Facebook --> */}
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="http://www.ayanfe.name/" />
+				<meta property="og:title" content="ÀYÀNFẸ" />
+				<meta property="og:description" content="Check out Ayanfe's website" />
+				<meta property="og:image" content="" />
+
+				{/* <!-- Twitter --> */}
+				<meta property="twitter:card" content="summary" />
+				<meta property="twitter:url" content="http://www.ayanfe.name/" />
+				<meta property="twitter:title" content="ÀYÀNFẸ" />
+				<meta property="twitter:description" content="Check out Ayanfe's website" />
+				<meta property="twitter:image" content="" />
 			</head>
 			<body>
 				{children}
