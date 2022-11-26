@@ -51,7 +51,7 @@ const ProjectsPage = () => {
 							<Image
 								src={project.image}
 								alt={`${project.name} made with ${project.tools}`}
-								priority
+								priority={index === 0}
 								fill
 								className="object-cover"
 								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 60vw"

@@ -1,5 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { LATO_BOLD } from "../globals/font";
+
+import bgImg from '../globals/images/night.png';
 
 const FrontendSection = () => {
 	return (
@@ -23,8 +26,11 @@ const FrontendSection = () => {
 							<div className="w-3/4 h-full bg-[#484862]"></div>
 						</div>
 					</div>
-					<div className="min-h-0">
-
+					<div className="min-h-0 min-w-0 relative">
+						<Image src={bgImg} alt='' fill placeholder="blur" className="object-cover" />
+						<div className="absolute inset-0 bg-black bg-opacity-40 p-2">
+							<p className="text-xs text-right">Background Image by Me</p>
+						</div>
 					</div>
 				</div>
 			</div>

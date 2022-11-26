@@ -75,7 +75,7 @@ const MainContainer = () => {
 					</svg>
 				</button>
 			</div>
-			<div className="absolute max-sm:hidden inset-y-0 right-0 w-min flex justify-center items-center pr-12">
+			<div className="absolute max-sm:hidden inset-y-8 right-0 w-min flex justify-center items-center pr-12">
 				<button
 					type="button"
 					aria-label="Scroll to Previous Section"
