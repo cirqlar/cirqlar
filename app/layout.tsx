@@ -1,6 +1,7 @@
 import './globals/globals.css'
 
 import { LATO_REGULAR } from './globals/font'
+import GlobalBody from './globals/global-body'
 
 export default function RootLayout({
 	children,
@@ -31,9 +32,9 @@ export default function RootLayout({
 				<meta property="twitter:description" content="Check out Ayanfe's website" />
 				<meta property="twitter:image" content="https://www.ayanfe.name/social.png" />
 			</head>
-			<body className='text-white'>
+			<GlobalBody>
 				{children}
-			</body>
+			</GlobalBody>
 		</html>
 	)
 }
