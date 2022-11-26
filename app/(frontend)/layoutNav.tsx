@@ -15,13 +15,13 @@ const FrontendLayoutNav = () => {
 
 	return (
 		<div className="w-full md:h-full flex justify-center items-center md:py-28">
-			<nav className="w-min h-min flex md:flex-col max-md:items-baseline gap-6 md:gap-12 max-md:overflow-x-auto max-md:px-6">
+			<nav className="w-min h-min flex md:flex-col items-baseline md:items-start gap-6 md:gap-12 overflow-x-auto md:overflow-x-hidden px-6 md:px-0">
 				{navigationLinks.map((navlink) => (
 					pathname === navlink.path
 						? (
-							<div key={navlink.name} className="max-md:order-first">
+							<div key={navlink.name} className="order-first md:order-none">
 								<h2 className={`${LATO_BOLD.className} text-3xl lg:text-5xl md:mb-6`}>{navlink.name}</h2>
-								<p className="text-base lg:text-xl whitespace-nowrap max-md:hidden">
+								<p className="text-base lg:text-xl whitespace-nowrap hidden md:block">
 									Programming since 2015 <br />
 									Web development for over 3 years <br />
 									Employed as a frontend dev for 2+ years <br />

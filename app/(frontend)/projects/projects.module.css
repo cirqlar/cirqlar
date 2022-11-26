@@ -52,7 +52,7 @@
 	margin-right: 256px;
 }
 
-@media not (min-width: theme(screens.lg)) {
+@media (max-width: 1023px) {
 	.project, .more {
 		width: 90%;
 		height: 90%;
@@ -60,7 +60,7 @@
 	}
 }
 
-@media (min-width: theme(screens.md)) and (not (min-width: theme(screens.lg))) {
+@media (min-width: theme(screens.md)) and (max-width: 1023px) {
 	.project, .more {
 		height: 60%;
 	}

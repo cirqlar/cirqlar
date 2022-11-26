@@ -8,12 +8,12 @@ const FrontendSection = () => {
 	return (
 		<section id="frontend" className="relative">
 			<div className="absolute inset-0 p-8 pb-16 flex justify-center items-center">
-				<div className="w-full max-w-full sm:max-w-5xl max-sm:max-h-[95%] aspect-[9/21] sm:aspect-video bg-[#2C2C3E] rounded-2xl grid grid-rows-[80px_1fr] grid-cols-1 overflow-hidden">
+				<div className="w-full max-w-full sm:max-w-5xl max-h-[95%] sm:max-h-full aspect-[9/21] sm:aspect-video bg-[#2C2C3E] rounded-2xl grid grid-rows-[80px_1fr] grid-cols-1 overflow-hidden">
 					<div className="grid grid-rows-2 grid-cols-1">
 						<div className="flex justify-between items-center">
 							<div className="h-full flex flex-row-reverse">
-								<div className="h-full w-40 rounded-tr-xl bg-[#393951] -ml-2 overflow-hidden max-sm:hidden"></div>
-								<div className="h-full w-40 rounded-tr-xl bg-[#484862] -ml-2 overflow-hidden max-sm:hidden"></div>
+								<div className="h-full w-40 rounded-tr-xl bg-[#393951] -ml-2 overflow-hidden hidden sm:block"></div>
+								<div className="h-full w-40 rounded-tr-xl bg-[#484862] -ml-2 overflow-hidden hidden sm:block"></div>
 								<div className="h-full w-40 rounded-tr-xl bg-[#2E1760] overflow-hidden"></div>
 							</div>
 							<div className="flex gap-4 justify-center items-center w-min pr-3">
