@@ -19,17 +19,17 @@ export default function RootLayout({
 
 				{/* <!-- Open Graph / Facebook --> */}
 				<meta property="og:type" content="website" />
-				<meta property="og:url" content="http://www.ayanfe.name/" />
+				<meta property="og:url" content="https://www.ayanfe.name/" />
 				<meta property="og:title" content="ÀYÀNFẸ" />
 				<meta property="og:description" content="Check out Ayanfe's website" />
-				<meta property="og:image" content="http://www.ayanfe.name/social.png" />
+				<meta property="og:image" content="https://www.ayanfe.name/social.png" />
 
 				{/* <!-- Twitter --> */}
 				<meta property="twitter:card" content="summary_large_image" />
-				<meta property="twitter:url" content="http://www.ayanfe.name/" />
+				<meta property="twitter:url" content="https://www.ayanfe.name/" />
 				<meta property="twitter:title" content="ÀYÀNFẸ" />
 				<meta property="twitter:description" content="Check out Ayanfe's website" />
-				<meta property="twitter:image" content="http://www.ayanfe.name/social.png" />
+				<meta property="twitter:image" content="https://www.ayanfe.name/social.png" />
 			</head>
 			<body>
 				{children}
