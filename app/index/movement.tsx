@@ -37,7 +37,6 @@ const MainContainer = () => {
 			setPage(newPage);
 			setScrolling(false);
 		}
-		console.log(scrollPercentage);
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [scrollPercentage]);
 
