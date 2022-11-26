@@ -13,7 +13,7 @@ const OtherSection = () => {
 					<p className="text-xs text-right">Background Image by Me</p>
 				</div>
 			</div>
-			<div className="max-sm:max-w-full max-sm:px-8 w-[480px] relative h-full mx-auto flex flex-col justify-end items-center pb-28">
+			<div className="max-w-full px-8 sm:px-0 w-[480px] relative h-full mx-auto flex flex-col justify-end items-center pb-28">
 				<h2 className={`${LATO_BOLD.className} text-4xl sm:text-6xl lg:text-8xl mb-5`}>Other</h2>
 				<p className="text-xl text-justify mb-5">I'm learning 3d using Blender and Unreal Engine 5 and hope to show my progress.</p>
 				<p className="flex p-2 w-auto justify-center items-center border border-gray-600 text-gray-600 rounded-md">Coming Soon</p>

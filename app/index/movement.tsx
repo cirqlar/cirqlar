@@ -61,7 +61,7 @@ const MainContainer = () => {
 
 	return (
 		<div>
-			<div className="absolute max-sm:hidden inset-y-0 left-0 w-min flex justify-center items-center pl-12">
+			<div className="absolute hidden md:flex inset-y-0 left-0 w-min justify-center items-center pl-12">
 				<button
 					type="button"
 					aria-label="Scroll to Next Section"
@@ -74,7 +74,7 @@ const MainContainer = () => {
 					</svg>
 				</button>
 			</div>
-			<div className="absolute max-sm:hidden inset-y-8 right-0 w-min flex justify-center items-center pr-12">
+			<div className="absolute hidden md:flex inset-y-8 right-0 w-min justify-center items-center pr-12">
 				<button
 					type="button"
 					aria-label="Scroll to Previous Section"

@@ -41,7 +41,7 @@ const ExperiencePage = () => {
 						>
 							{exp.dates}
 						</p>
-						<div className="max-md:mb-6 last:mb-0">
+						<div className="mb-6 md:mb-0 last:mb-0">
 							<p className={`${LATO_BOLD.className} text-2xl lg:text-4xl h-8 lg:h-10 flex items-center mb-2 md:mb-4`}>{exp.company}</p>
 							<p className="text-sm lg:text-base mb-2 md:mb-4">Tools: {exp.tools}</p>
 							<p className="text-base lg:text-xl">{exp.description}</p>
