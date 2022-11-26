@@ -74,8 +74,8 @@ const ProjectsPage = () => {
 						</div>
 					</div>
 				))}
-				<div id={"More...".replaceAll(/ |\./g, '-')} className={styles.project}>
-					
+				<div id={"More...".replaceAll(/ |\./g, '-')} className={styles.more}>
+					<p className="text-2xl @lg:text-4xl">See more on <a className="underline" href="https://github.com/cirqlar?tab=repositories" target="_blank" rel="noreferrer" aria-label="See more on Github">Github</a></p>
 				</div>
 			</div>
 			<div className="flex justify-center items-center">

@@ -26,11 +26,11 @@
 	display: none;
 }
 
-.projects > .project {
+.projects > .project, .projects > .more {
 	scroll-snap-align: center;
 }
 
-.project {
+.project, .more {
 	max-width: 600px;
 	width: 75%;
 	aspect-ratio: 16/10;
@@ -48,12 +48,12 @@
 	margin-left: 256px;
 }
 
-.project:last-child {
+.more:last-child {
 	margin-right: 256px;
 }
 
 @media not (min-width: theme(screens.lg)) {
-	.project {
+	.project, .more {
 		width: 90%;
 		height: 90%;
 		aspect-ratio: 16/14;
@@ -61,7 +61,13 @@
 }
 
 @media (min-width: theme(screens.md)) and (not (min-width: theme(screens.lg))) {
-	.project {
+	.project, .more {
 		height: 60%;
 	}
+}
+
+.more {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
