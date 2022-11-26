@@ -22,14 +22,14 @@ export default function RootLayout({
 				<meta property="og:url" content="http://www.ayanfe.name/" />
 				<meta property="og:title" content="ÀYÀNFẸ" />
 				<meta property="og:description" content="Check out Ayanfe's website" />
-				<meta property="og:image" content="" />
+				<meta property="og:image" content="/social.png" />
 
 				{/* <!-- Twitter --> */}
-				<meta property="twitter:card" content="summary" />
+				<meta property="twitter:card" content="summary_large_image" />
 				<meta property="twitter:url" content="http://www.ayanfe.name/" />
 				<meta property="twitter:title" content="ÀYÀNFẸ" />
 				<meta property="twitter:description" content="Check out Ayanfe's website" />
-				<meta property="twitter:image" content="" />
+				<meta property="twitter:image" content="/social.png" />
 			</head>
 			<body>
 				{children}
