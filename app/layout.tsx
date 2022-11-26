@@ -31,7 +31,7 @@ export default function RootLayout({
 				<meta property="twitter:description" content="Check out Ayanfe's website" />
 				<meta property="twitter:image" content="https://www.ayanfe.name/social.png" />
 			</head>
-			<body>
+			<body className='text-white'>
 				{children}
 			</body>
 		</html>

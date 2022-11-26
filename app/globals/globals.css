@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+	html {
+		color-scheme: dark;
+	}
+
 	html, body {
 		height: 100%;
 		overflow: hidden;
@@ -20,15 +24,5 @@
 	
 	* {
 		box-sizing: border-box;
-	}
-	
-	@media (prefers-color-scheme: dark) {
-		html {
-			color-scheme: dark;
-		}
-		body {
-			color: white;
-			background: black;
-		}
 	}
 }
