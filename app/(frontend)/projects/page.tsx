@@ -12,7 +12,7 @@ import CarButton from "./car-button";
 
 const projects = [
 	{
-		name: 'ayanfe.com',
+		name: 'This Site',
 		url: '/',
 		githubUrl: 'https://github.com/cirqlar/cirqlar',
 		tools: 'Nextjs, Typescript',
