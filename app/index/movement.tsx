@@ -1,63 +1,86 @@
 "use client";
-import { useEffect, useState } from 'react';
-import { useScrollPercentage } from '../hooks/use-scroll-percentage';
+import { useEffect, useRef, useCallback } from 'react';
 
 const MainContainer = () => {
-	const { scrollPercentage } = useScrollPercentage('#maincontainer', 'horizontal');
-	const [scrolling, setScrolling] = useState(false);
-	const [page, setPage] = useState<'main' | 'frontend' | 'other'>('main');
+	const leftButton = useRef<HTMLButtonElement>(null);
+	const rightButton = useRef<HTMLButtonElement>(null);
+	const mainButton = useRef<HTMLButtonElement>(null);
+	const frontendButton = useRef<HTMLButtonElement>(null);
+	const otherButton = useRef<HTMLButtonElement>(null);
+
+	const getPercent = () => {
+		const scrollContainer = document.querySelector('#maincontainer');
+		if (!scrollContainer) return 0;
+
+		const length = scrollContainer.clientWidth;
+		const scrollLength = scrollContainer.scrollWidth - length;
+		return Math.round((scrollContainer.scrollLeft / scrollLength) * 100);
+	}
+
+	const scrollFunction = useCallback(() => {
+		const percent = getPercent();
+
+		if (percent < 50) {
+			leftButton.current?.classList.add('hidden');
+			rightButton.current?.classList.remove('hidden');
+
+			mainButton.current?.classList.replace('bg-gray-400', 'bg-white');
+			frontendButton.current?.classList.replace('bg-white', 'bg-gray-400');
+			otherButton.current?.classList.replace('bg-white', 'bg-gray-400');
+		} else if (percent < 100) {
+			leftButton.current?.classList.remove('hidden');
+			rightButton.current?.classList.remove('hidden');
+
+			mainButton.current?.classList.replace('bg-white', 'bg-gray-400');
+			frontendButton.current?.classList.replace('bg-gray-400', 'bg-white');
+			otherButton.current?.classList.replace('bg-white', 'bg-gray-400');
+		} else {
+			leftButton.current?.classList.remove('hidden');
+			rightButton.current?.classList.add('hidden');
+
+			mainButton.current?.classList.replace('bg-white', 'bg-gray-400');
+			frontendButton.current?.classList.replace('bg-white', 'bg-gray-400');
+			otherButton.current?.classList.replace('bg-gray-400', 'bg-white');
+		}
+	}, []);
+
+	useEffect(() => {
+		const scrollContainer = document.querySelector('#maincontainer');
+
+		if (scrollContainer) {
+			scrollContainer.addEventListener('scroll', scrollFunction, { passive: true });
+
+			return () => scrollContainer.addEventListener('scroll', scrollFunction, { passive: true });
+		}
+	}, [scrollFunction]);
 
 	const scrollToMain = () => {
-		if (scrolling) return;
-		setScrolling(true);
 		document.querySelector('#main')?.scrollIntoView({ behavior: 'smooth' });
 	}
 	const scrollToFrontend = () => {
-		if (scrolling) return;
-		setScrolling(true);
 		document.querySelector('#frontend')?.scrollIntoView({ behavior: 'smooth' });
 	}
 	const scrollToOther = () => {
-		if (scrolling) return;
-		setScrolling(true);
 		document.querySelector('#other')?.scrollIntoView({ behavior: 'smooth' });
 	}
 
-	useEffect(() => {
-		let newPage: 'main' | 'frontend' | 'other' | undefined;
-		if (scrollPercentage === 0) {
-			newPage = 'main';
-		} else if (scrollPercentage === 50) {
-			newPage = 'frontend';
-		} else if (scrollPercentage === 100) {
-			newPage = 'other';
-		}
-		
-		if (newPage && newPage !== page) {
-			setPage(newPage);
-			setScrolling(false);
-		}
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [scrollPercentage]);
-
 	const scrollNext = () => {
-		if (page === 'main') {
+		const percent = getPercent();
+		if (percent < 50) {
 			scrollToFrontend();
-		} else if (page === 'frontend') {
+		} else if (percent < 100) {
 			scrollToOther();
 		}
 	}
 
 	const scrollPrevious = () => {
-		if (page === 'main') {
-			return;
-		} else if (page === 'frontend') {
-			scrollToMain();
-		} else {
+		const percent = getPercent();
+		if (percent >= 100) {
 			scrollToFrontend();
+		} else if (percent >= 50) {
+			scrollToMain();
 		}
 	}
-
 
 	return (
 		<div>
@@ -65,8 +88,8 @@ const MainContainer = () => {
 				<button
 					type="button"
 					aria-label="Scroll to Next Section"
-					className={`text-white disabled:text-gray-400 ${page === 'main' ? 'hidden' : ''}`}
-					disabled={page==='main'}
+					className={`text-white disabled:text-gray-400 hidden`}
+					ref={leftButton}
 					onClick={scrollPrevious}
 				>
 					<svg width="34" height="66" viewBox="0 0 34 66" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,8 +101,8 @@ const MainContainer = () => {
 				<button
 					type="button"
 					aria-label="Scroll to Previous Section"
-					className={`text-white disabled:text-gray-400 ${page === 'other' ? 'hidden' : ''}`}
-					disabled={page==='other'}
+					className={`text-white disabled:text-gray-400`}
+					ref={rightButton}
 					onClick={scrollNext}
 				>
 					<svg width="34" height="66" viewBox="0 0 34 66" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,22 +112,25 @@ const MainContainer = () => {
 			</div>
 			<div className="absolute h-20 inset-x-0 bottom-0 flex justify-center items-center gap-6">
 				<button
-					className={`h-1 w-6 ${page === 'main' ? "bg-white" : "bg-gray-400"}`}
+					className={`h-1 w-6 bg-gray-400`}
 					type="button"
 					aria-label="Scroll to Main"
 					onClick={scrollToMain}
+					ref={mainButton}
 				></button>
 				<button
-					className={`h-1 w-6 ${page === 'frontend' ? "bg-white" : "bg-gray-400"}`}
+					className={`h-1 w-6 bg-white`}
 					type="button"
 					aria-label="Scroll to Frontend"
 					onClick={scrollToFrontend}
+					ref={frontendButton}
 				></button>
 				<button
-					className={`h-1 w-6 ${page === 'other' ? "bg-white" : "bg-gray-400"}`}
+					className={`h-1 w-6 bg-white`}
 					type="button"
 					aria-label="Scroll to Other"
 					onClick={scrollToOther}
+					ref={otherButton}
 				></button>
 			</div>
 		</div>
