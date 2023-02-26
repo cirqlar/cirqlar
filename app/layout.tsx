@@ -1,6 +1,32 @@
 import './globals/globals.css'
 
 import { LATO_REGULAR } from './globals/font'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+	title: 'ÀYÀNFẸ',
+	description: "Check out Ayanfe's website",
+	viewport: {
+		width: 'device-width',
+		initialScale: 1,
+	},
+	icons: '/favicon.ico',
+
+	openGraph: {
+		type: 'website',
+		url: 'https://www.ayanfe.name/',
+		title: 'ÀYÀNFẸ',
+		description: "Check out Ayanfe's website",
+		images: 'https://www.ayanfe.name/social.png',
+	},
+	
+	twitter: {
+		card: 'summary_large_image',
+		title: 'ÀYÀNFẸ',
+		description: "Check out Ayanfe's website",
+		images: 'https://www.ayanfe.name/social.png',
+	},
+}
 
 export default function RootLayout({
 	children,
@@ -9,28 +35,6 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className={LATO_REGULAR.className}>
-			<head>
-				<title>ÀYÀNFẸ</title>
-				<meta name="title" content="ÀYÀNFẸ" />
-				<meta name="description" content="Check out Ayanfe's website" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-				<link rel="icon" href="/favicon.ico" />
-
-				{/* <!-- Open Graph / Facebook --> */}
-				<meta property="og:type" content="website" />
-				<meta property="og:url" content="https://www.ayanfe.name/" />
-				<meta property="og:title" content="ÀYÀNFẸ" />
-				<meta property="og:description" content="Check out Ayanfe's website" />
-				<meta property="og:image" content="https://www.ayanfe.name/social.png" />
-
-				{/* <!-- Twitter --> */}
-				<meta property="twitter:card" content="summary_large_image" />
-				<meta property="twitter:url" content="https://www.ayanfe.name/" />
-				<meta property="twitter:title" content="ÀYÀNFẸ" />
-				<meta property="twitter:description" content="Check out Ayanfe's website" />
-				<meta property="twitter:image" content="https://www.ayanfe.name/social.png" />
-			</head>
 			<body className='text-white'>
 				{children}
 			</body>
