@@ -19,28 +19,30 @@ const MainContainer = () => {
 
 	const scrollFunction = useCallback(() => {
 		const percent = getPercent();
+		const activeColor = 'bg-white';
+		const inactiveColor = 'bg-gray-400';
 
 		if (percent < 50) {
 			leftButton.current?.classList.add('hidden');
 			rightButton.current?.classList.remove('hidden');
 
-			mainButton.current?.classList.replace('bg-gray-400', 'bg-white');
-			frontendButton.current?.classList.replace('bg-white', 'bg-gray-400');
-			otherButton.current?.classList.replace('bg-white', 'bg-gray-400');
+			mainButton.current?.classList.replace(inactiveColor, activeColor);
+			frontendButton.current?.classList.replace(activeColor, inactiveColor);
+			otherButton.current?.classList.replace(activeColor, inactiveColor);
 		} else if (percent < 100) {
 			leftButton.current?.classList.remove('hidden');
 			rightButton.current?.classList.remove('hidden');
 
-			mainButton.current?.classList.replace('bg-white', 'bg-gray-400');
-			frontendButton.current?.classList.replace('bg-gray-400', 'bg-white');
-			otherButton.current?.classList.replace('bg-white', 'bg-gray-400');
+			mainButton.current?.classList.replace(activeColor, inactiveColor);
+			frontendButton.current?.classList.replace(inactiveColor, activeColor);
+			otherButton.current?.classList.replace(activeColor, inactiveColor);
 		} else {
 			leftButton.current?.classList.remove('hidden');
 			rightButton.current?.classList.add('hidden');
 
-			mainButton.current?.classList.replace('bg-white', 'bg-gray-400');
-			frontendButton.current?.classList.replace('bg-white', 'bg-gray-400');
-			otherButton.current?.classList.replace('bg-gray-400', 'bg-white');
+			mainButton.current?.classList.replace(activeColor, inactiveColor);
+			frontendButton.current?.classList.replace(activeColor, inactiveColor);
+			otherButton.current?.classList.replace(inactiveColor, activeColor);
 		}
 	}, []);
 
