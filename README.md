@@ -1,7 +1,7 @@
 Hi! It's me!
 # ÀYÀNFẸ
 
-I'm a frontend developer mostly working with frontend frameworks and tools including (but not limited to) React, Nextjs and Vuejs. I'm also learning 3d with Blender and Unreal Engine.
+I'm a software developer mostly working with frontend frameworks and tools including (but not limited to) React, Nextjs and Vuejs. I'm also learning 3d with Blender and Unreal Engine.
 
 ## Info
 - Programming since 2015
