@@ -40,7 +40,7 @@ const FrontendLayoutNav = () => {
 				))}
 				<a
 					className={`${LATO_BOLD.className} text-lg lg:text-2xl flex items-baseline md:items-center gap-3`}
-					href="https://docs.google.com/document/d/1-XeSw5DwV6fNbSBDyLa-e4PlD-jOGcJxDTRwaVfdhbA/edit?usp=sharing"
+					href="https://docs.google.com/document/d/1R1DaFmChMq50IXdIXINOK4SNrklaIVKgVi7hUTG6-ls/edit?usp=sharing"
 					target="_blank"
 					rel="noreferrer"
 				>
