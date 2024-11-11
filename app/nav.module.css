@@ -1,0 +1,74 @@
+.transformed {
+	--width: 100px;
+	--height: 50px;
+	--translate-amount: 50px;
+	position: absolute;
+	width: var(--width);
+	height: var(--height);
+	left: calc(50% - var(--width)/2);
+	top: calc(50% - var(--height)/2);
+	transform: rotate(var(--rot)) translate(calc((var(--width)/2 + var(--translate-amount)) * -1), 0);
+	transform-origin: center;
+
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-direction: column;
+}
+
+.main {
+	perspective: 800px;
+}
+
+.nav {
+	--min-wide: min(100vh, 100vw);
+	--nav-oversize: 600px;
+	--nav-size: calc(var(--min-wide) + var(--nav-oversize));
+
+	--item-width: 200px;
+	--item-height: 70px;
+	--item-margin: 50px;
+
+	--center-margin: 50px;
+
+
+	width: var(--nav-size);
+	height: var(--nav-size);
+	background-color: blueviolet;
+
+	position: absolute;
+	top: calc(var(--min-wide)/2 - var(--nav-size)/2);
+	left: 35%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	transform-origin: left;
+	transform: rotateY(25deg);
+}
+
+.nav_link_container {
+	
+	position: absolute;
+	width: var(--item-width);
+	height: var(--item-height);
+	left: calc(50% - var(--item-width)/2);
+	top: calc(50% - var(--item-height)/2);
+	transform: rotate(var(--rot)) translate(calc((var(--nav-size)/2 - var(--item-width)/2 - var(--item-margin)) * -1), 0);
+	transform-origin: center;
+
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+.nav_center {
+	--center-size: calc(var(--nav-size) - var(--item-width)*2 - var(--item-margin)*2 - var(--center-margin)*2);
+
+	background-color: black;
+	width: var(--center-size);
+	height: var(--center-size);
+	border-radius: 100%;
+}
