@@ -42,20 +42,23 @@ export default function Nav() {
 
 	return (
 		<main className={`${navStyles.main} w-full h-full overflow-clip relative`}>
-			<nav className={navStyles.nav}>
-				<div
-					className={navStyles.nav_container}
-					style={{ "--nav-rot": `${(360 / links.length) * current + multiplier * 360}deg` }}
-				>
-					{/* Nav Center */}
-					<div className={navStyles.nav_center}>
-						<AILogo />
+			<nav 
+				className={navStyles.nav}
+				style={{ "--nav-rot": `${(360 / links.length) * current + multiplier * 360}deg` }}
+			>
+				<div className={navStyles.nav_images_wrapper}>
+					<div className={navStyles.nav_images}>
+						{/* Nav Center */}
+						<div className={navStyles.nav_center}>
+							<AILogo />
+						</div>
 					</div>
-
+				</div>
+				<div className={navStyles.nav_container}>
 					{links.map(({ href, text }, i) => (
 						<div
 							key={href}
-							className={`${navStyles.nav_link_container} text-6xl m-auto`}
+							className={`${navStyles.nav_link_container} m-auto`}
 							style={{ "--item-rot": `${360 - (360 / links.length) * i}deg` }}
 						>
 							<a
