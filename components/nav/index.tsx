@@ -41,7 +41,14 @@ export default function Nav() {
 	}
 
 	return (
-		<main className={`${navStyles.main} w-full h-full overflow-clip relative`}>
+		<main className={`${navStyles.main} w-full h-full overflow-clip relative p-10 md:p-20`}>
+			<div className="">
+				<h1 className="text-4xl font-bold uppercase">
+					<span>Ayanfeoluwa</span><br />
+					<span className="inline-block mt-6">Ibitoye</span>
+				</h1>
+			</div>
+
 			<nav 
 				className={navStyles.nav}
 				style={{ "--nav-rot": `${(360 / links.length) * current + multiplier * 360}deg` }}
@@ -58,7 +65,7 @@ export default function Nav() {
 					{links.map(({ href, text }, i) => (
 						<div
 							key={href}
-							className={`${navStyles.nav_link_container} m-auto`}
+							className={`${navStyles.nav_link_container} m-auto text-5xl md:text-6xl`}
 							style={{ "--item-rot": `${360 - (360 / links.length) * i}deg` }}
 						>
 							<a
