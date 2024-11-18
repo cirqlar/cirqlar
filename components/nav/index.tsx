@@ -3,6 +3,9 @@
 import { useRef, useState } from "react";
 import navStyles from "./nav.module.css";
 import AILogo from "../logo";
+import EmailIcon from "../icons/email";
+import GithubIcon from "../icons/github";
+import LinkedinIcon from "../icons/linkedin";
 
 const links = [
 	{ href: "/gosomewhere1", text: "About" },
@@ -41,7 +44,7 @@ export default function Nav() {
 	}
 
 	return (
-		<main className={`${navStyles.main} w-full h-full overflow-clip relative p-10 md:p-20`}>
+		<main className={`${navStyles.main} w-full h-full overflow-clip relative p-10 md:p-20 md:flex md:flex-col md:justify-between`}>
 			<div className="">
 				<h1 className="text-4xl font-bold uppercase">
 					<span>Ayanfeoluwa</span><br />
@@ -83,8 +86,23 @@ export default function Nav() {
 				</div>
 			</nav>
 
-			<button onClick={() => focusTarget(current + 1)}>up</button>
-			<button onClick={() => focusTarget(current - 1)}>down</button>
+			<button
+				className={navStyles.nav_button_top}
+				onClick={() => focusTarget(current - 1)}
+			>up arrow</button>
+			<button
+				className={navStyles.nav_button_bottom}
+				onClick={() => focusTarget(current + 1)}
+			>down arrow</button>
+
+			<div className="flex">
+				<div className="border-2 border-slate-900 dark:border-slate-100 rounded flex gap-2 px-2 py-2">
+					<a href="#"><EmailIcon /></a>
+					<a href="#"><GithubIcon /></a>
+					<a href="#"><LinkedinIcon /></a>
+				</div>
+			</div>
+
 		</main>
 	);
 }
