@@ -56,7 +56,7 @@ export default function Nav() {
 				<div className={navStyles.nav_images_wrapper}>
 					<div className={navStyles.nav_images}>
 						{/* Nav Center */}
-						<div className={navStyles.nav_center}>
+						<div className={`${navStyles.nav_center} text-opacity-40 dark:text-opacity-40 text-slate-900 dark:text-slate-100`}>
 							<AILogo />
 						</div>
 					</div>

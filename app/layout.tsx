@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
+import { ThemeHtml } from "@/components/theme";
 
 const lato = Lato({
   weight: ['300', '700'],
@@ -18,12 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <ThemeHtml>
       <body
-        className={`${lato.className} antialiased`}
+        className={`${lato.className} antialiased bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-100`}
       >
         {children}
       </body>
-    </html>
+    </ThemeHtml>
   );
 }
