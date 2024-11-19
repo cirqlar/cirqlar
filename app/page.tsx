@@ -1,22 +1,115 @@
-// import Image from "next/image";
+"use client";
+import { useRef, useState } from "react";
 
-import Nav from "@/components/nav";
+import AILogo from "@/components/logo";
+import EmailIcon from "@/components/icons/email";
+import GithubIcon from "@/components/icons/github";
+import LinkedinIcon from "@/components/icons/linkedin";
 
+import styles from "./home.module.css";
+import ArrowIcon from "@/components/icons/arrow";
+
+
+const links = [
+	{ href: "/gosomewhere1", text: "About" },
+	{ href: "/gosomewhere2", text: "Web Dev" },
+	{ href: "/gosomewhere3", text: "Game Dev" },
+	{ href: "/gosomewhere4", text: "Resume" },
+	{ href: "/gosomewhere5", text: "Others" },
+];
 
 export default function Home() {
-  
+  const [current, setCurrent] = useState(0);
+	const [multiplier, setMult] = useState(0);
 
-  return (
-    <Nav />
+	const linkRefs = useRef<(HTMLAnchorElement | null)[]>(
+		new Array(links.length)
+	);
 
-    // <div className="w-[500px] h-[500px] flex justify-center items-center bg-red-900">
-    //   <div className="relative w-24 h-24 bg-black rounded-full">
-    //     {links.map(({ href, text }, i) => (
-    //       <div key={href} className={`${navStyles.transformed} m-auto`} style={{ '--rot': `${360 - 360/links.length*i}deg` }}>
-    //         <a href={href} className="hover:text-green-700 focus:text-green-300">{text}</a>
-    //       </div>
-    //     ))}
-    //   </div>
-    // </div>
-  );
+	const focusTarget = (target: number) => {
+		let rounded;
+		if (target === -1) {
+			rounded = links.length - 1;
+		} else {
+			rounded = target % links.length;
+		}
+		linkRefs.current[rounded]?.focus();
+	};
+
+	const handleTarget = (target: number) => {
+		if (target === 0 && current === links.length - 1) {
+			setMult(prev => prev + 1);
+		} else if (target === links.length - 1 && current === 0) {
+			setMult(prev => prev - 1);
+		}
+
+		setCurrent(target);
+	}
+
+	return (
+		<main className={`${styles.main} w-full h-full overflow-clip relative p-10 md:p-20 md:flex md:flex-col md:justify-between`}>
+			<div className="">
+				<h1 className="text-4xl font-bold uppercase">
+					<span>Ayanfeoluwa</span><br />
+					<span className="inline-block mt-6">Ibitoye</span>
+				</h1>
+			</div>
+
+			<nav 
+				className={styles.nav}
+				style={{ "--nav-rot": `${(360 / links.length) * current + multiplier * 360}deg` }}
+			>
+				<div className={styles.nav_images}>
+					<div className={styles.nav_center_wrapper}>
+						{/* Nav Center */}
+						<div className={`${styles.nav_center} text-opacity-40 dark:text-opacity-40 text-slate-900 dark:text-slate-100`}>
+							<AILogo />
+						</div>
+					</div>
+				</div>
+				<div className={styles.nav_container}>
+					{links.map(({ href, text }, i) => (
+						<div
+							key={href}
+							className={`${styles.nav_link_container} m-auto text-5xl md:text-6xl`}
+							style={{ "--item-rot": `${360 - (360 / links.length) * i}deg` }}
+						>
+							<a
+								href={href}
+								ref={(el) => {
+									linkRefs.current[i] = el;
+								}}
+								className="hover:text-green-700 focus:text-green-300 outline-none"
+								onFocus={() => handleTarget(i)}
+							>
+								{text}
+							</a>
+						</div>
+					))}
+				</div>
+			</nav>
+
+			<button
+				className={styles.nav_button_top}
+				onClick={() => focusTarget(current + 1)}
+			>
+        <ArrowIcon className="rotate-180 md:-rotate-90" />
+      </button>
+			<button
+				className={styles.nav_button_bottom}
+				onClick={() => focusTarget(current - 1)}
+			>
+        <ArrowIcon className="md:rotate-90" />
+      </button>
+
+			<div className="flex mt-6 md:mt-0">
+				<div className="border-2 border-slate-900 dark:border-slate-100 rounded flex gap-2 px-2 py-2">
+					<a href="#"><EmailIcon /></a>
+					<a href="#"><GithubIcon /></a>
+					<a href="#"><LinkedinIcon /></a>
+				</div>
+			</div>
+
+		</main>
+	);
 }

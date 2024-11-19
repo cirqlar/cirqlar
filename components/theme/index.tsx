@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { THEME_LOCAL_KEY } from "./constants";
 
 
 type BrowserTheme = 'light' | 'dark';
@@ -11,8 +12,6 @@ type ThemeContextValue = {
 	theme: BrowserTheme,
 	toggle: (new_mode: Theme) => void,
 }
-
-const THEME_LOCAL_KEY = 'themethemetheme';
 
 const ThemeContext = createContext<ThemeContextValue>({ theme: 'dark', toggle: () => {}});
 
