@@ -136,10 +136,6 @@
 	height: var(--item-height);
 }
 
-.transition_title {
-	view-transition-name: transition-title;
-}
-
 .nav_button_top, .nav_button_bottom {
 	--width: 50px;
 	width: var(--width);
