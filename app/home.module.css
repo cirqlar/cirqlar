@@ -6,6 +6,8 @@
 	
 	--nav-center: calc(100vw/2 - var(--nav-size)/2 + var(--item-radius));
 	--center-margin: 50px;
+
+	--transition-time: .5s;
 	
 	@media (height >= theme(screens.md)) {
 		--center-margin: 150px;
@@ -78,7 +80,7 @@
 	position: absolute;
 	transform: translate(-50%, -50%) rotateZ(var(--nav-rot));
 	transform-origin: center;
-	transition: transform .5s;
+	transition: transform var(--transition-time);
 
 	@media (width < theme(screens.md)) {
 		--center-size: calc(var(--item-radius)*2 - var(--item-height) - var(--center-margin));
@@ -105,7 +107,7 @@
 	transform-origin: center;
 	transform: rotateZ(var(--nav-rot));
 
-	transition: transform .5s;
+	transition: transform var(--transition-time);
 }
 
 .nav_link_container {

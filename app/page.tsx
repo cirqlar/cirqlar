@@ -119,7 +119,7 @@ export default function Home() {
 										// Do Anim Stuff
 										setTimeout(() => {
 											document.startViewTransition?.(() => router.push(href))
-										}, 2000);
+										}, 600);
 									}}
 								>
 									{text}
@@ -159,7 +159,7 @@ export default function Home() {
 
 			<div className={`absolute bottom-0 left-0 ${transitionStarted ? 'h-full' : 'h-0'} w-full bg-slate-700 overflow-hidden transition-all duration-500`}>
 				<div className={`${styles.nav_link_copy_container} flex justify-center items-center absolute bottom-[50vh] left-[50vw] -translate-x-1/2 translate-y-1/2`}>
-					<h1 className="text-5xl md:text-6xl text-black w-min">{links[current].text}</h1>
+					<h2 className="text-5xl md:text-6xl text-black w-min">{links[current].text}</h2>
 				</div>
 			</div>
 		</main>

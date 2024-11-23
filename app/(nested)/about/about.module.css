@@ -1,0 +1,83 @@
+.container {
+	top: 50vh;
+	transform: translate(0, -50%);
+	transition: transform var(--transition-time), top var(--transition-time);
+
+	@media (width < theme(screens.md)) {
+		:global(.main.open) & {
+			top: calc(120px + 32px + 2.5rem);
+			transform: translate(0, 0);
+		}
+	}
+}
+
+.title {
+	color: theme(textColor.black);
+	transition: color var(--transition-time);
+
+	:global(.main.open) & {
+		color: inherit;
+	}
+}
+
+.text {
+	width: 0;
+	overflow: hidden;
+	/* opacity: 0; */
+	transition: width var(--transition-time);/*, opacity var(--transition-time);*/
+
+	--final-width: max(280px, 30vw);
+	--div-width: 2px;
+	--div-margin: 64px;
+	--div-full: calc(var(--div-width) + var(--div-margin)*2);
+
+	@media (width < theme(screens.md)) {
+		width: 100%;
+		height: 0;
+		transition: height var(--transition-time);
+
+		--final-width: min(320px, 50vh);
+		--div-margin: 16px;
+	}
+
+	.divider {
+		width: var(--div-width);
+		height: min(250px, 30vh);
+		margin: 0 var(--div-margin);
+		background-color: white;
+
+		@media (width < theme(screens.md)) {
+			height: var(--div-width);
+			width: 100%;
+			margin: var(--div-margin) 0;
+		}
+	}
+
+	.text_container {
+		width: min(calc(100% - var(--div-full)), var(--final-width));
+		
+		@media (width < theme(screens.md)) {
+			height: min(calc(100% - var(--div-full)), var(--final-width));
+			width: 100%;
+		}
+	}
+
+	p {
+		display: inline-block;
+		width: var(--final-width);
+
+		@media (width < theme(screens.md)) {
+			width: auto;
+		}
+	}
+
+	:global(.main.open) & {
+		width: calc(var(--final-width) + var(--div-full));
+		/* opacity: 100%; */
+
+		@media (width < theme(screens.md)) {
+			width: 100%;
+			height: calc(var(--final-width) + var(--div-full));
+		}
+	}
+}
