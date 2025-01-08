@@ -8,6 +8,10 @@
 	--center-margin: 50px;
 
 	--transition-time: .5s;
+
+	@media (prefers-reduced-motion) {
+		--transition-time: 0s;
+	}
 	
 	@media (height >= theme(screens.md)) {
 		--center-margin: 150px;
