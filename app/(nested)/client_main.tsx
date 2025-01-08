@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function Main(props: { children?: React.ReactNode }) {
-	const [open, setOpen] = useState(window?.matchMedia('(prefers-reduced-motion)').matches ?? false);
+	const [open, setOpen] = useState((window ?? {})?.matchMedia('(prefers-reduced-motion)').matches ?? false);
 
 	useEffect(() => setOpen(true), []);
 
