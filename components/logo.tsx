@@ -1,6 +1,6 @@
-export default function AILogo() {
+export default function AILogo(props: { className?: string }) {
 	return (
-		<svg width="808" height="808" viewBox="0 0 808 808" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg className={props.className} width="808" height="808" viewBox="0 0 808 808" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path d="M34 404C34 209.754 183.685 50.4693 374 35.1987V374H316V256H257L186.24 374H79V435H149.66L79.5 552H138.5L208.66 435H257V552H316V435H374V772.802C183.685 757.531 34 598.246 34 404Z" fill="currentColor" />
 			<path d="M774 404C774 597.565 625.363 756.414 436 772.636V435H583V494H524V552H701V494H642V315H701V257H524V315H583V374H436V35.3646C625.363 51.5865 774 210.435 774 404Z" fill="currentColor" />
 			<path d="M257 354.389L245.24 374H257V354.389Z" fill="currentColor" />

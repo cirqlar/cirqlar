@@ -56,7 +56,7 @@ export default function Home() {
 
 	return (
 		<main
-			className={`${styles.main} w-full h-full overflow-clip relative p-10 md:p-20 md:flex md:flex-col md:justify-between`}
+			className={`${styles.main} w-full h-full overflow-clip relative p-10 md:p-16 md:flex md:flex-col md:justify-between`}
 		>
 			<div className="">
 				<h1 className="text-4xl font-bold uppercase">
