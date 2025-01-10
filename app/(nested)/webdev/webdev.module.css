@@ -1,17 +1,32 @@
-.square {
-	width: min(100vh, 100vw);
-	height: min(100vh, 100vw);
-
-	--extension: 100px;
+.root {
 	--transition-time: .5s;
 	--border-transition-time: .2s;
 	--border-thickness: 4px;
+	--length: min(min(100vh, 100vw), calc(128px + 400px));
+	--spacing: 64px;
+	--def-left: calc(100vw - var(--length) - var(--spacing));
+}
 
+.square {
+	width: var(--length);
+	height: var(--length);
+
+	position: absolute;
+	top: calc(50% - var(--length)/2);
+
+	left: calc(100% - var(--length) - var(--spacing));
+	transition: left var(--transition-time);
+
+	&.flip {
+		left: var(--spacing);
+	}
+
+	--extension: 50px;
 	--rot-angle: 30deg;
 
 	.up_right, .down_right, .up_left, .down_left {
 		width: calc(50% + var(--extension));
-		height: calc(50% + var(--border-thickness)/2);
+		height: 50%;
 		position: absolute;
 		transition: transform var(--transition-time), border-top var(--border-transition-time), border-bottom var(--border-transition-time);
 	}
@@ -28,7 +43,7 @@
 	
 	.down_right {
 		left: 50%;
-		top: calc(50% - var(--border-thickness)/2);
+		top: 50%;
 		
 		transform-origin: top left;
 		transform: rotate(var(--rot-angle));
@@ -44,7 +59,7 @@
 
 	.down_left {
 		right: 50%;
-		top: calc(50% - var(--border-thickness)/2);
+		top: 50%;
 
 		transform-origin: top right;
 	}
