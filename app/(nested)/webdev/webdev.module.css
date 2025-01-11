@@ -1,5 +1,5 @@
 .root {
-	--transition-time: .5s;
+	--web-time: .5s;
 	--border-transition-time: .2s;
 	--border-thickness: 4px;
 	--length: min(min(100vh, 100vw), calc(128px + 400px));
@@ -15,103 +15,66 @@
 	top: calc(50% - var(--length)/2);
 
 	left: calc(100% - var(--length) - var(--spacing));
-	transition: left var(--transition-time);
-
-	&.flip {
-		left: var(--spacing);
-	}
+	transition: left var(--web-time), opacity var(--web-time);
 
 	--extension: 50px;
-	--rot-angle: 30deg;
+	--box-angle: 28deg;
 
-	.up_right, .down_right, .up_left, .down_left {
-		width: calc(50% + var(--extension));
-		height: 50%;
+	.up_right, .down_right {
+		--b-len: calc(var(--length)/2 + var(--extension));
+		width: var(--b-len);
+		height: var(--b-len);
+
 		position: absolute;
-		transition: transform var(--transition-time), border-top var(--border-transition-time), border-bottom var(--border-transition-time);
+		left: 50%;
+
+		transition: 
+			transform var(--web-time), 
+			background var(--transition-time), 
+			border-top var(--border-transition-time), 
+			border-bottom var(--border-transition-time), 
+			border-left var(--border-transition-time);
 	}
 
 	.up_right {
-		left: 50%;
-		top: 0;
+		bottom: 50%;
 
 		transform-origin: bottom left;
-		transform: rotate(calc(var(--rot-angle) * -1));
+		
+		:global(.main.open) & {
+			transform: rotate(calc(var(--box-angle) * -1 + var(--compensation, 0deg)));
 
-		border-bottom: var(--border-thickness) solid white;
+			border-left: var(--border-thickness) solid white;
+			border-bottom: var(--border-thickness) solid white;
+			box-shadow: black 0px 25px 20px -20px;
+		}
 	}
 	
 	.down_right {
-		left: 50%;
 		top: 50%;
 		
 		transform-origin: top left;
-		transform: rotate(var(--rot-angle));
-		border-top: var(--border-thickness) solid white;
-	}
-	
-	.up_left {
-		right: 50%;
-		top: 0;
+		:global(.main.open) & {
+			transform: rotate(calc(var(--box-angle) + var(--compensation, 0deg)));
 
-		transform-origin: bottom right;
-	}
-
-	.down_left {
-		right: 50%;
-		top: 50%;
-
-		transform-origin: top right;
-	}
-
-	&.flip {
-		.up_right, .down_right {
-			transform: rotate(0deg);
-		}
-
-		.up_right {
-			border-bottom: 0 solid white;
-		}
-
-		.down_right {
-			border-top: 0 solid white;
-		}
-
-		.up_left {
-			transform: rotate(var(--rot-angle));
-			border-bottom: var(--border-thickness) solid white;
-		}
-
-		.down_left {
-			transform: rotate(calc(var(--rot-angle) * -1));
+			border-left: var(--border-thickness) solid white;
 			border-top: var(--border-thickness) solid white;
+			box-shadow: black 0px -25px 20px -20px;
 		}
 	}
 }
 
-.grad {
-	width: 100%;
-	height: 100%;
+.web_links {
+	height: 40px;
+	display: inline-block;
 	position: absolute;
-	top: 0;
 
-	--bg: theme('backgroundColor.slate.900');
+	top: calc(50% - 20px);
+	left: 0;
 
-	background: conic-gradient(
-		var(--bg) 45deg, transparent 45deg,
-		transparent 135deg, var(--bg) 135deg,
-		var(--bg) 270deg, transparent 270deg,
-		transparent 270deg, var(--bg) 270deg
-	);
+	transform-origin: center left;
 
-	transition: background var(--transition-time);
-	
-	&.flip {
-		background: conic-gradient(
-			var(--bg) 90deg, transparent 90deg,
-			transparent 90deg, var(--bg) 90deg,
-			var(--bg) 225deg, transparent 225deg,
-			transparent 315deg, var(--bg) 315deg
-		);
-	}
+	transform: rotate(var(--rot-angle, 0)) translate(150px, 0px);
+
+	transition: transform var(--web-time);
 }
