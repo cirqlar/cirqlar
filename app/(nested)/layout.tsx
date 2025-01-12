@@ -12,7 +12,7 @@ export default function NestedLayout({
 }>) {
 	return (
 		<Main>
-			<div className="w-full h-full overflow-hidden title_block">
+			<div className="w-full h-full overflow-hidden title_block z-10">
 				<Link href="/" className="text-4xl font-bold uppercase">
 					<span>Ayanfeoluwa</span>
 					<br />
@@ -22,7 +22,7 @@ export default function NestedLayout({
 
 			{children}
 
-			<div className="content-end w-full h-full overflow-hidden flex items-end social_block">
+			<div className="content-end w-full h-full overflow-hidden flex items-end social_block z-10">
 				<Socials />
 			</div>
 		</Main>

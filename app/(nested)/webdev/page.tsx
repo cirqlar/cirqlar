@@ -12,6 +12,8 @@ const LINK_ANGLE = 18;
 export default function WebDevPage() {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
+	const compensation = (currentIndex - 1) * -LINK_ANGLE;
+
 	return (
 		<div className={styles.root}>
 			<div className={`${styles.square} group-[:not(.open)]/client:opacity-0`}>
@@ -30,15 +32,25 @@ export default function WebDevPage() {
 					))}
 				</div>
 				<div
+					className={`${styles.up_left} group-[:not(.open)]/client:bg-slate-700 group-[.open]/client:bg-slate-100 group-[.open]/client:dark:bg-slate-900`}
+					style={{ '--compensation': `${compensation}deg` }}
+				>
+					<AILogo className="text-opacity-40 dark:text-opacity-40 text-slate-900 dark:text-slate-100" />
+				</div>
+				<div
+					className={`${styles.down_left} group-[:not(.open)]/client:bg-slate-700 group-[.open]/client:bg-slate-100 group-[.open]/client:dark:bg-slate-900`}
+					style={{ '--compensation': `${compensation}deg` }}
+				>
+					<AILogo className="text-opacity-40 dark:text-opacity-40 text-slate-900 dark:text-slate-100" />
+				</div>
+				<div
 					className={`${styles.up_right} group-[:not(.open)]/client:bg-slate-700 group-[.open]/client:bg-slate-100 group-[.open]/client:dark:bg-slate-900`}
-					style={{ '--compensation': `${(currentIndex - 1) * -LINK_ANGLE}deg` }}
+					style={{ '--compensation': `${compensation}deg` }}
 				></div>
 				<div 
 					className={`${styles.down_right} group-[:not(.open)]/client:bg-slate-700 group-[.open]/client:bg-slate-100 group-[.open]/client:dark:bg-slate-900`}
-					style={{ '--compensation': `${(currentIndex - 1) * -LINK_ANGLE}deg` }}
+					style={{ '--compensation': `${compensation}deg` }}
 				></div>
-				{/* <div className={`${styles.up_left} bg-slate-100 dark:bg-slate-900`}></div>
-				<div className={`${styles.down_left} bg-slate-100 dark:bg-slate-900`}></div> */}
 				<div className="group-[:not(.open)]/client:bg-slate-700 group-[.open]/client:bg-slate-100 group-[.open]/client:dark:bg-slate-900 absolute w-32 h-32 border-[length:var(--border-thickness)] border-white rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
 			</div>
 			<div className={`absolute top-1/2 group-[:not(.open)]/client:left-1/2 -translate-y-1/2 -translate-x-1/2 transition-all ease-[ease] duration-[var(--web-time)] group-[.open]/client:left-[calc(var(--def-left)+var(--length)/2)]`}>

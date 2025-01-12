@@ -26,7 +26,6 @@
 		height: var(--b-len);
 
 		position: absolute;
-		left: 50%;
 
 		transition: 
 			transform var(--web-time), 
@@ -38,6 +37,7 @@
 
 	.up_right {
 		bottom: 50%;
+		left: 50%;
 
 		transform-origin: bottom left;
 		
@@ -52,6 +52,7 @@
 	
 	.down_right {
 		top: 50%;
+		left: 50%;
 		
 		transform-origin: top left;
 		:global(.main.open) & {
@@ -60,6 +61,49 @@
 			border-left: var(--border-thickness) solid white;
 			border-top: var(--border-thickness) solid white;
 			box-shadow: black 0px -25px 20px -20px;
+		}
+	}
+
+	.up_left, .down_left {
+		--b-len: calc(var(--length)/2);
+		width: var(--b-len);
+		height: var(--b-len);
+
+		position: absolute;
+		overflow: hidden;
+
+		transition: 
+			transform var(--web-time),
+			background var(--transition-time);
+
+		> svg {
+			width: var(--length);
+			height: var(--length);
+			object-fit: contain;
+
+			position: relative;
+		}
+
+		:global(.main.open) & {
+			transform: rotate(var(--compensation, 0deg));
+		}
+	}
+
+	.up_left {
+		bottom: 50%;
+		left: 0;
+
+		transform-origin: bottom right;
+	}
+	
+	.down_left {
+		top: 50%;
+		left: 0;
+
+		transform-origin: top right;
+
+		> svg {
+			bottom: calc(var(--length)/2);
 		}
 	}
 }
