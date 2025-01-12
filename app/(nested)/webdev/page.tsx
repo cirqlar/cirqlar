@@ -11,8 +11,14 @@ const LINK_ANGLE = 18;
 
 export default function WebDevPage() {
 	const [currentIndex, setCurrentIndex] = useState(0);
+	const [previousIndex, setPreviousIndex] = useState(-1);
 
 	const compensation = (currentIndex - 1) * -LINK_ANGLE;
+
+	const handleClick = (index: number) => {
+		setPreviousIndex(currentIndex);
+		setCurrentIndex(index);
+	};
 
 	return (
 		<div className={styles.root}>
@@ -22,7 +28,7 @@ export default function WebDevPage() {
 					{links.map((link, index) => (
 						<button
 							key={link}
-							onClick={() => setCurrentIndex(index)}
+							onClick={() => handleClick(index)}
 							disabled={index == currentIndex}
 							className={`${styles.web_links} block text-2xl font-bold`}
 							style={{ '--rot-angle': `${(index - currentIndex) * LINK_ANGLE}deg` }}
