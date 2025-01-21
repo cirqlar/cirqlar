@@ -30,7 +30,7 @@ export default function WebDevPage() {
 							key={link}
 							onClick={() => handleClick(index)}
 							disabled={index == currentIndex}
-							className={`${styles.web_links} block text-2xl font-bold`}
+							className={`${styles.web_links} block text-xl disabled:text-2xl lg:text-2xl font-bold lg:disabled:text-3xl disabled:text-slate-300`}
 							style={{ '--rot-angle': `${(index - currentIndex) * LINK_ANGLE}deg` }}
 						>
 							{link}

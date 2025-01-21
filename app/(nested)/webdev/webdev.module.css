@@ -5,6 +5,10 @@
 	--length: min(min(100vh, 100vw), calc(128px + 400px));
 	--spacing: 64px;
 	--def-left: calc(100vw - var(--length) - var(--spacing));
+
+	@media (width < theme(screens.lg)) {
+		--length: min(min(100vh, 100vw), calc(128px + 250px));
+	}
 }
 
 .square {
@@ -19,6 +23,11 @@
 
 	--extension: 50px;
 	--box-angle: 28deg;
+
+	@media (width < theme(screens.lg)) {
+		--extension: 25px;
+		--box-angle: 32deg;
+	}
 
 	.up_right, .down_right {
 		--b-len: calc(var(--length)/2 + var(--extension));
@@ -121,4 +130,8 @@
 	transform: rotate(var(--rot-angle, 0)) translate(150px, 0px);
 
 	transition: transform var(--web-time);
+
+	@media (width < theme(screens.lg)) {
+		transform: rotate(var(--rot-angle, 0)) translate(100px, 0px);
+	}
 }
