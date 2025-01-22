@@ -77,7 +77,7 @@ export default function Home() {
 					<div className={styles.nav_center_wrapper}>
 						{/* Nav Center */}
 						<div
-							className={`${styles.nav_center} text-opacity-40 text-slate-100`}
+							className={`${styles.nav_center} text-opacity-40 text-type`}
 						>
 							<AILogo />
 						</div>
@@ -96,7 +96,7 @@ export default function Home() {
 									ref={(el) => {
 										linkRefs.current[i] = el;
 									}}
-									className="hover:text-green-700 focus:text-green-300 outline-none"
+									className="hover:text-primary focus:text-primary-light outline-none"
 									onFocus={() => handleTarget(i)}
 								>
 									{text}
@@ -107,7 +107,7 @@ export default function Home() {
 									ref={(el) => {
 										linkRefs.current[i] = el;
 									}}
-									className="hover:text-green-700 focus:text-green-300 outline-none"
+									className="hover:text-primary focus:text-primary-light outline-none"
 									onFocus={() => {
 										handleTarget(i);
 										router.prefetch(href);
@@ -149,7 +149,7 @@ export default function Home() {
 			</button>
 
 			<div className="flex mt-6 md:mt-0">
-				<div className="border-2 border-slate-100 rounded flex gap-2 px-2 py-2">
+				<div className="border-2 border-type rounded flex gap-2 px-2 py-2">
 					<a href="#">
 						<EmailIcon />
 					</a>
@@ -162,7 +162,7 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div className={`absolute bottom-0 left-0 ${transitionStarted ? 'h-full' : 'h-0'} w-full bg-slate-700 overflow-hidden motion-safe:transition-all motion-safe:duration-500`}>
+			<div className={`absolute bottom-0 left-0 ${transitionStarted ? 'h-full' : 'h-0'} w-full bg-base-light overflow-hidden motion-safe:transition-all motion-safe:duration-500`}>
 				<div className={`${styles.nav_link_copy_container} flex justify-center items-center absolute bottom-[50vh] left-[50vw] -translate-x-1/2 translate-y-1/2`}>
 					<h2 className="text-5xl md:text-6xl text-black w-min">{links[current].text}</h2>
 				</div>

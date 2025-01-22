@@ -11,6 +11,6 @@ export default function Main(props: { children?: React.ReactNode }) {
 		main w-full h-full max-h-full p-10 md:p-16
 		group/client
 		${open ? 'open' : ''} 
-		${open ? 'bg-transparent' : 'bg-slate-700'}
+		${open ? 'bg-transparent' : 'bg-base-light'}
 	`}>{props.children}</main>
 }

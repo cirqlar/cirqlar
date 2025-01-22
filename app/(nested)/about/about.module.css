@@ -12,7 +12,7 @@
 }
 
 .title {
-	color: theme(textColor.black);
+	color: theme(textColor.type.dark);
 	transition: color var(--transition-time);
 
 	:global(.main.open) & {

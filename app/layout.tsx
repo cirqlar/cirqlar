@@ -22,7 +22,7 @@ export default function RootLayout({
       <head>
       </head>
       <body
-        className={`${lato.className} antialiased bg-slate-900 text-slate-100`}
+        className={`${lato.className} antialiased bg-base text-type`}
       >
         {children}
       </body>

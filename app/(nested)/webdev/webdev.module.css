@@ -134,18 +134,18 @@
 }
 
 .up_left, .down_left, .up_right, .down_right {
-	background-color: theme(backgroundColor.slate.900);
+	background-color: theme(backgroundColor.base.DEFAULT);
 
 	:global(.main:not(.open)) & {
-		background-color: theme(backgroundColor.slate.700);
+		background-color: theme(backgroundColor.base.light);
 	}
 }
 
 .center {
-	background-color: theme(backgroundColor.slate.900);
+	background-color: theme(backgroundColor.base.DEFAULT);
 
 	:global(.main:not(.open)) & {
-		background-color: theme(backgroundColor.slate.700);
+		background-color: theme(backgroundColor.base.light);
 	}
 }
 
