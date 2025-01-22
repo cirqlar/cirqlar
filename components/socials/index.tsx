@@ -29,7 +29,7 @@ export default function Socials({
 }: SocialsProps) {
 	const classes = classNameOverride
 		? className
-		: `border-2 border-slate-900 dark:border-slate-100 rounded flex gap-2 px-2 py-2 w-min ${className}`
+		: `border-2 border-slate-100 rounded flex gap-2 px-2 py-2 w-min ${className}`
 	
 	return (
 		<div className={classes}>

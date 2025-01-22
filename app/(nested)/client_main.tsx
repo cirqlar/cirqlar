@@ -8,7 +8,7 @@ export default function Main(props: { children?: React.ReactNode }) {
 	useEffect(() => setOpen(true), []);
 
 	return <main className={`
-		main w-full h-full p-10 md:p-16
+		main w-full h-full max-h-full p-10 md:p-16
 		group/client
 		${open ? 'open' : ''} 
 		${open ? 'bg-transparent' : 'bg-slate-700'}

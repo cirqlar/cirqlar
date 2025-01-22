@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
-// import { ThemeHtml } from "@/components/theme";
-import { THEME_LOCAL_KEY } from "@/components/theme/constants";
 
 const lato = Lato({
   weight: ['300', '700'],
@@ -22,15 +20,9 @@ export default function RootLayout({
   return (
     <html className="dark" lang="en">
       <head>
-        <script dangerouslySetInnerHTML={{ __html: `
-          // document.documentElement.classList.toggle(
-          //   'dark',
-          //   localStorage.${THEME_LOCAL_KEY} === 'dark' || (!('${THEME_LOCAL_KEY}' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-          // )
-        ` }}></script>
       </head>
       <body
-        className={`${lato.className} antialiased bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-100`}
+        className={`${lato.className} antialiased bg-slate-900 text-slate-100`}
       >
         {children}
       </body>

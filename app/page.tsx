@@ -77,7 +77,7 @@ export default function Home() {
 					<div className={styles.nav_center_wrapper}>
 						{/* Nav Center */}
 						<div
-							className={`${styles.nav_center} text-opacity-40 dark:text-opacity-40 text-slate-900 dark:text-slate-100`}
+							className={`${styles.nav_center} text-opacity-40 text-slate-100`}
 						>
 							<AILogo />
 						</div>
@@ -149,7 +149,7 @@ export default function Home() {
 			</button>
 
 			<div className="flex mt-6 md:mt-0">
-				<div className="border-2 border-slate-900 dark:border-slate-100 rounded flex gap-2 px-2 py-2">
+				<div className="border-2 border-slate-100 rounded flex gap-2 px-2 py-2">
 					<a href="#">
 						<EmailIcon />
 					</a>
