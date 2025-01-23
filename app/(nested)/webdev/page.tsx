@@ -88,7 +88,7 @@ export default function WebDevPage() {
 					Web Dev
 				</h2>
 			</div>
-			<div className="bg-base-light/50 relative z-20 mt-40 flex-1 rounded-sm transition-all delay-[var(--web-time)] duration-[var(--web-time)] group-[:not(.open)]/client:opacity-0 md:mr-[calc(var(--length)+16px)] md:mt-0 md:min-w-96">
+			<div className="bg-base-light/50 relative z-20 mt-40 flex-1 overflow-hidden rounded-sm transition-all delay-[var(--web-time)] duration-[var(--web-time)] group-[:not(.open)]/client:opacity-0 md:mr-[calc(var(--length)+16px)] md:mt-0 md:min-w-96">
 				<div
 					className={`${styles.from_top} ${styles.content} px-4 py-5`}
 					ref={(el) => {
@@ -146,7 +146,21 @@ export default function WebDevPage() {
 						contentRefs.current[1] = el;
 					}}
 				>
-					Skills content
+					<ul>
+						<li className="mb-4">
+							<h3 className="mb-2 text-lg font-bold">At Work</h3>
+							<p>
+								Typescript, Nextjs, React, React Native, Nodejs,
+								Vue, Git, Graphql
+							</p>
+						</li>
+						<li className="mb-4">
+							<h3 className="mb-2 text-lg font-bold">
+								Elsewhere
+							</h3>
+							<p>Rust, C++, Solidjs</p>
+						</li>
+					</ul>
 				</div>
 				<div
 					className={`${styles.content} p-4`}
