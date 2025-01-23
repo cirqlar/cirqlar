@@ -10,14 +10,12 @@ const links = ['Experience', 'Skills', 'Projects'];
 
 export default function WebDevPage() {
 	const [currentIndex, setCurrentIndex] = useState(0);
-	// const [previousIndex, setPreviousIndex] = useState(-1);
 
 	const contentRefs = useRef<(HTMLDivElement | null)[]>(new Array(links.length));
 
 	const compensation = (currentIndex - 1) * -1;
 
 	const handleClick = (index: number) => {
-		// setPreviousIndex(currentIndex);
 		setCurrentIndex(index);
 
 		contentRefs.current[currentIndex]?.classList.remove(styles.from_bottom, styles.from_top, styles.to_bottom, styles.to_top);
@@ -74,9 +72,29 @@ export default function WebDevPage() {
 			<div className={styles.web_dev_container}>
 				<h2 className="text-5xl md:text-6xl text-black w-min group-[.open]/client:text-inherit group-[.open]/client:scale-50 transition-all duration-[var(--web-time)]">Web Dev</h2>
 			</div>
-			<div className="relative md:min-w-96 mt-40 md:mt-0 md:mr-[calc(var(--length)+16px)] flex-1 bg-base-light bg-opacity-90 rounded group-[:not(.open)]/client:opacity-0 transition-all duration-[var(--web-time)] delay-[var(--web-time)] z-20">
-				<div className={`${styles.from_top} ${styles.content}`} ref={(el) => { contentRefs.current[0] = el; }}>
-					Experience content
+			<div className="relative md:min-w-96 mt-40 md:mt-0 md:mr-[calc(var(--length)+16px)] flex-1 bg-base-light bg-opacity-50 rounded group-[:not(.open)]/client:opacity-0 transition-all duration-[var(--web-time)] delay-[var(--web-time)] z-20">
+				<div className={`${styles.from_top} ${styles.content} px-4 py-5`} ref={(el) => { contentRefs.current[0] = el; }}>
+					<ul>
+						<li className="mb-4">
+							<div className="md:flex items-baseline mb-2">
+								<h3 className="text-lg font-bold">Helicarrier Studio</h3>
+								<span className="md:ml-2 text-xs">Aug 2021 - Present</span>
+							</div>
+							<p className="mb-2">Front end and mobile development of various apps inlcuding responsibilities such as:</p>
+							<ul className="list-disc ml-8">
+								<li>Implementing features and designs taking into account stakeholder goals and quality assurance feedback</li>
+								<li>Managing release coordination</li>
+								<li>Handling optimization and improvements of apps and services including large scale rewrites and refactors without breaking compatibility</li>
+							</ul>
+						</li>
+						<li className="mb-4">
+							<div className="md:flex items-baseline mb-2">
+								<h3 className="text-lg font-bold">Crenet Techlabs</h3>
+								<span className="md:ml-2 text-xs">Aug 2020 - Aug 2021</span>
+							</div>
+							<p>Front end development of web apps for varied clients</p>
+						</li>
+					</ul>
 				</div>
 				<div className={`${styles.content} p-4`} ref={(el) => { contentRefs.current[1] = el; }}>
 					Skills content

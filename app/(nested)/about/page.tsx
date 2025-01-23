@@ -17,8 +17,8 @@ export default function AboutPage() {
 
 
 					<div className={styles.text_container}>
-						<p className="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis harum perspiciatis aliquam aspernatur provident enim quasi.</p>
-						<p className="text-base text-pretty mt-2">Exercitationem, doloremque sint modi architecto provident accusantium libero illo est nihil incidunt. Quidem dolorem numquam tempora debitis, iure odio in praesentium molestias.</p>
+						<p className="text-type">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis harum perspiciatis aliquam aspernatur provident enim quasi.</p>
+						<p className="text-type text-pretty mt-2">Exercitationem, doloremque sint modi architecto provident accusantium libero illo est nihil incidunt. Quidem dolorem numquam tempora debitis, iure odio in praesentium molestias.</p>
 					</div>
 				</div>
 			</div>
