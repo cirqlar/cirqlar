@@ -1,8 +1,8 @@
-@import 'tailwindcss/theme' theme(reference);
+@import "tailwindcss/theme" theme(reference);
 
 .root {
-	--web-time: .5s;
-	--border-transition-time: .2s;
+	--web-time: 0.5s;
+	--border-transition-time: 0.2s;
 	--border-thickness: 4px;
 	--length: min(min(100vh, 100vw), calc(128px + 400px));
 	--web-spacing: 64px;
@@ -24,10 +24,12 @@
 	height: var(--length);
 
 	position: absolute;
-	top: calc(50% - var(--length)/2);
+	top: calc(50% - var(--length) / 2);
 
 	left: calc(100% - var(--length) - var(--web-spacing));
-	transition: left var(--web-time), opacity var(--web-time);
+	transition:
+		left var(--web-time),
+		opacity var(--web-time);
 
 	--extension: 50px;
 	--box-angle: 28deg;
@@ -42,24 +44,24 @@
 	}
 
 	@media (width < theme(--breakpoint-md)) {
-		top: calc((var(--length) * -1 /2) + 120px + 40px + 56px);
-		left: calc((var(--length) * -1 /2) + 40px + 56px);
+		top: calc((var(--length) * -1 / 2) + 120px + 40px + 56px);
+		left: calc((var(--length) * -1 / 2) + 40px + 56px);
 	}
-
 }
 
-.up_right, .down_right {
-	--b-len: calc(var(--length)/2 + var(--extension));
+.up_right,
+.down_right {
+	--b-len: calc(var(--length) / 2 + var(--extension));
 	width: var(--b-len);
 	height: var(--b-len);
 
 	position: absolute;
 
-	transition: 
-		transform var(--web-time), 
-		background var(--transition-time), 
-		border-top var(--border-transition-time), 
-		border-bottom var(--border-transition-time), 
+	transition:
+		transform var(--web-time),
+		background var(--transition-time),
+		border-top var(--border-transition-time),
+		border-bottom var(--border-transition-time),
 		border-left var(--border-transition-time);
 }
 
@@ -68,9 +70,14 @@
 	left: 50%;
 
 	transform-origin: bottom left;
-	
+
 	:global(.main.open) & {
-		transform: rotate(calc(var(--box-angle) * -1 + var(--compensation, 0) * var(--link-angle)));
+		transform: rotate(
+			calc(
+				var(--box-angle) * -1 + var(--compensation, 0) *
+					var(--link-angle)
+			)
+		);
 
 		border-left: var(--border-thickness) solid white;
 		border-bottom: var(--border-thickness) solid white;
@@ -81,10 +88,13 @@
 .down_right {
 	top: 50%;
 	left: 50%;
-	
+
 	transform-origin: top left;
+
 	:global(.main.open) & {
-		transform: rotate(calc(var(--box-angle) + var(--compensation, 0) * var(--link-angle)));
+		transform: rotate(
+			calc(var(--box-angle) + var(--compensation, 0) * var(--link-angle))
+		);
 
 		border-left: var(--border-thickness) solid white;
 		border-top: var(--border-thickness) solid white;
@@ -92,15 +102,16 @@
 	}
 }
 
-.up_left, .down_left {
-	--b-len: calc(var(--length)/2);
+.up_left,
+.down_left {
+	--b-len: calc(var(--length) / 2);
 	width: var(--b-len);
 	height: var(--b-len);
 
 	position: absolute;
 	overflow: hidden;
 
-	transition: 
+	transition:
 		transform var(--web-time),
 		background var(--transition-time);
 
@@ -131,11 +142,14 @@
 	transform-origin: top right;
 
 	> svg {
-		bottom: calc(var(--length)/2);
+		bottom: calc(var(--length) / 2);
 	}
 }
 
-.up_left, .down_left, .up_right, .down_right {
+.up_left,
+.down_left,
+.up_right,
+.down_right {
 	background-color: var(--color-base);
 
 	:global(.main:not(.open)) & {
@@ -160,7 +174,7 @@
 	transition-duration: var(--web-time);
 
 	transform: translate(0, -50%);
-	
+
 	:global(.main:not(.open)) & {
 		left: 66.666667%;
 		opacity: 0;
@@ -181,19 +195,21 @@
 
 	transform-origin: center left;
 
-	transform: rotate(calc(var(--rot-mult, 0) * var(--link-angle))) translate(150px, 0px);
+	transform: rotate(calc(var(--rot-mult, 0) * var(--link-angle)))
+		translate(150px, 0px);
 
 	transition: transform var(--web-time);
 
 	@media (width < theme(--breakpoint-lg)) {
-		transform: rotate(calc(var(--rot-mult, 0) * var(--link-angle))) translate(100px, 0px);
+		transform: rotate(calc(var(--rot-mult, 0) * var(--link-angle)))
+			translate(100px, 0px);
 	}
 }
 
 .web_dev_container {
 	position: absolute;
 	top: 50%;
-	left: calc(var(--def-left)+var(--length)/2);
+	left: calc(var(--def-left)+var(--length) / 2);
 
 	transition-property: all;
 	transition-duration: var(--web-time);
@@ -220,7 +236,6 @@
 	height: 100%;
 	overflow: auto;
 }
-
 
 @keyframes from_top {
 	to {

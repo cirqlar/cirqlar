@@ -1,8 +1,15 @@
 import { IconProps } from "./icontypes";
 
-const EmailIcon = ({ fill = 'currentColor', className }: IconProps) => {
+const EmailIcon = ({ fill = "currentColor", className }: IconProps) => {
 	return (
-		<svg width="24" height="25" className={className} viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg
+			width="24"
+			height="25"
+			className={className}
+			viewBox="0 0 24 25"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
 			<path
 				fillRule="evenodd"
 				clipRule="evenodd"
@@ -10,12 +17,7 @@ const EmailIcon = ({ fill = 'currentColor', className }: IconProps) => {
 				fill={fill}
 			/>
 		</svg>
-
-	)
-}
+	);
+};
 
 export default EmailIcon;
-
-
-
-

@@ -9,7 +9,9 @@
 	grid-template-rows: 0px 1fr 0px;
 	/* grid-template-rows: 120px 1fr 45px; */
 	grid-template-columns: 1fr;
-	transition: grid-template-rows var(--transition-time), background-color var(--transition-time);
+	transition:
+		grid-template-rows var(--transition-time),
+		background-color var(--transition-time);
 	gap: 16px;
 
 	width: 100%;

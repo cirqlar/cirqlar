@@ -1,9 +1,11 @@
-@import 'tailwindcss/theme' theme(reference);
+@import "tailwindcss/theme" theme(reference);
 
 .container {
 	top: 50vh;
 	transform: translate(0, -50%);
-	transition: transform var(--transition-time), top var(--transition-time);
+	transition:
+		transform var(--transition-time),
+		top var(--transition-time);
 
 	@media (width < theme(--breakpoint-md)) {
 		:global(.main.open) & {
@@ -25,13 +27,12 @@
 .text {
 	width: 0;
 	overflow: hidden;
-	/* opacity: 0; */
-	transition: width var(--transition-time);/*, opacity var(--transition-time);*/
+	transition: width var(--transition-time);
 
 	--final-width: max(280px, 30vw);
 	--div-width: 2px;
 	--div-margin: 64px;
-	--div-full: calc(var(--div-width) + var(--div-margin)*2);
+	--div-full: calc(var(--div-width) + var(--div-margin) * 2);
 
 	@media (width < theme(--breakpoint-md)) {
 		width: 100%;
@@ -57,7 +58,7 @@
 
 	.text_container {
 		width: min(calc(100% - var(--div-full)), var(--final-width));
-		
+
 		@media (width < theme(--breakpoint-md)) {
 			height: min(calc(100% - var(--div-full)), var(--final-width));
 			width: 100%;
@@ -75,7 +76,6 @@
 
 	:global(.main.open) & {
 		width: calc(var(--final-width) + var(--div-full));
-		/* opacity: 100%; */
 
 		@media (width < theme(--breakpoint-md)) {
 			width: 100%;

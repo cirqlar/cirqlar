@@ -1,25 +1,37 @@
 "use client";
 
-import { useRef, useState } from 'react';
+import { useRef, useState } from "react";
 
-import styles from './webdev.module.css';
+import AILogo from "@/components/logo";
 
-import AILogo from '@/components/logo';
+import styles from "./webdev.module.css";
 
-const links = ['Experience', 'Skills', 'Projects'];
+const links = ["Experience", "Skills", "Projects"];
 
 export default function WebDevPage() {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
-	const contentRefs = useRef<(HTMLDivElement | null)[]>(new Array(links.length));
+	const contentRefs = useRef<(HTMLDivElement | null)[]>(
+		new Array(links.length),
+	);
 
 	const compensation = (currentIndex - 1) * -1;
 
 	const handleClick = (index: number) => {
 		setCurrentIndex(index);
 
-		contentRefs.current[currentIndex]?.classList.remove(styles.from_bottom, styles.from_top, styles.to_bottom, styles.to_top);
-		contentRefs.current[index]?.classList.remove(styles.from_bottom, styles.from_top, styles.to_bottom, styles.to_top);
+		contentRefs.current[currentIndex]?.classList.remove(
+			styles.from_bottom,
+			styles.from_top,
+			styles.to_bottom,
+			styles.to_top,
+		);
+		contentRefs.current[index]?.classList.remove(
+			styles.from_bottom,
+			styles.from_top,
+			styles.to_bottom,
+			styles.to_top,
+		);
 
 		if (currentIndex < index) {
 			contentRefs.current[currentIndex]?.classList.add(styles.to_top);
@@ -31,17 +43,17 @@ export default function WebDevPage() {
 	};
 
 	return (
-		<div className={`${styles.root} min-w-0 min-h-0 flex flex-col`}>
+		<div className={`${styles.root} flex min-h-0 min-w-0 flex-col`}>
 			<div className={styles.square}>
-				<AILogo className="w-full h-full object-contain text-type/40"/>
+				<AILogo className="text-type/40 h-full w-full object-contain" />
 				<div className={styles.web_links_container}>
 					{links.map((link, index) => (
 						<button
 							key={link}
 							onClick={() => handleClick(index)}
 							disabled={index == currentIndex}
-							className={`${styles.web_links} block text-xl disabled:text-2xl lg:text-2xl font-bold lg:disabled:text-3xl disabled:text-slate-300`}
-							style={{ '--rot-mult': `${index - currentIndex}` }}
+							className={`${styles.web_links} block text-xl font-bold disabled:text-2xl disabled:text-slate-300 lg:text-2xl lg:disabled:text-3xl`}
+							style={{ "--rot-mult": `${index - currentIndex}` }}
 						>
 							{link}
 						</button>
@@ -49,57 +61,99 @@ export default function WebDevPage() {
 				</div>
 				<div
 					className={styles.up_left}
-					style={{ '--compensation': `${compensation}` }}
+					style={{ "--compensation": `${compensation}` }}
 				>
 					<AILogo className="text-type/40" />
 				</div>
 				<div
 					className={styles.down_left}
-					style={{ '--compensation': `${compensation}` }}
+					style={{ "--compensation": `${compensation}` }}
 				>
 					<AILogo className="text-type/40" />
 				</div>
 				<div
 					className={styles.up_right}
-					style={{ '--compensation': `${compensation}` }}
+					style={{ "--compensation": `${compensation}` }}
 				></div>
-				<div 
+				<div
 					className={styles.down_right}
-					style={{ '--compensation': `${compensation}` }}
+					style={{ "--compensation": `${compensation}` }}
 				></div>
-				<div className={`${styles.center} absolute w-28 h-28 lg:w-32 lg:h-32 border-[length:var(--border-thickness)] border-type rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}></div>
+				<div
+					className={`${styles.center} border-type absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full border-[length:var(--border-thickness)] lg:h-32 lg:w-32`}
+				></div>
 			</div>
 			<div className={styles.web_dev_container}>
-				<h2 className="text-5xl md:text-6xl text-black w-min group-[.open]/client:text-inherit group-[.open]/client:scale-50 transition-all duration-[var(--web-time)]">Web Dev</h2>
+				<h2 className="w-min text-5xl text-black transition-all duration-[var(--web-time)] group-[.open]/client:scale-50 group-[.open]/client:text-inherit md:text-6xl">
+					Web Dev
+				</h2>
 			</div>
-			<div className="relative md:min-w-96 mt-40 md:mt-0 md:mr-[calc(var(--length)+16px)] flex-1 bg-base-light/50 rounded-sm group-[:not(.open)]/client:opacity-0 transition-all duration-[var(--web-time)] delay-[var(--web-time)] z-20">
-				<div className={`${styles.from_top} ${styles.content} px-4 py-5`} ref={(el) => { contentRefs.current[0] = el; }}>
+			<div className="bg-base-light/50 relative z-20 mt-40 flex-1 rounded-sm transition-all delay-[var(--web-time)] duration-[var(--web-time)] group-[:not(.open)]/client:opacity-0 md:mr-[calc(var(--length)+16px)] md:mt-0 md:min-w-96">
+				<div
+					className={`${styles.from_top} ${styles.content} px-4 py-5`}
+					ref={(el) => {
+						contentRefs.current[0] = el;
+					}}
+				>
 					<ul>
 						<li className="mb-4">
-							<div className="md:flex items-baseline mb-2">
-								<h3 className="text-lg font-bold">Helicarrier Studio</h3>
-								<span className="md:ml-2 text-xs">Aug 2021 - Present</span>
+							<div className="mb-2 items-baseline md:flex">
+								<h3 className="text-lg font-bold">
+									Helicarrier Studio
+								</h3>
+								<span className="text-xs md:ml-2">
+									Aug 2021 - Present
+								</span>
 							</div>
-							<p className="mb-2">Front end and mobile development of various apps inlcuding responsibilities such as:</p>
-							<ul className="list-disc ml-8">
-								<li>Implementing features and designs taking into account stakeholder goals and quality assurance feedback</li>
+							<p className="mb-2">
+								Front end and mobile development of various apps
+								inlcuding responsibilities such as:
+							</p>
+							<ul className="ml-8 list-disc">
+								<li>
+									Implementing features and designs taking
+									into account stakeholder goals and quality
+									assurance feedback
+								</li>
 								<li>Managing release coordination</li>
-								<li>Handling optimization and improvements of apps and services including large scale rewrites and refactors without breaking compatibility</li>
+								<li>
+									Handling optimization and improvements of
+									apps and services including large scale
+									rewrites and refactors without breaking
+									compatibility
+								</li>
 							</ul>
 						</li>
 						<li className="mb-4">
-							<div className="md:flex items-baseline mb-2">
-								<h3 className="text-lg font-bold">Crenet Techlabs</h3>
-								<span className="md:ml-2 text-xs">Aug 2020 - Aug 2021</span>
+							<div className="mb-2 items-baseline md:flex">
+								<h3 className="text-lg font-bold">
+									Crenet Techlabs
+								</h3>
+								<span className="text-xs md:ml-2">
+									Aug 2020 - Aug 2021
+								</span>
 							</div>
-							<p>Front end development of web apps for varied clients</p>
+							<p>
+								Front end development of web apps for varied
+								clients
+							</p>
 						</li>
 					</ul>
 				</div>
-				<div className={`${styles.content} p-4`} ref={(el) => { contentRefs.current[1] = el; }}>
+				<div
+					className={`${styles.content} p-4`}
+					ref={(el) => {
+						contentRefs.current[1] = el;
+					}}
+				>
 					Skills content
 				</div>
-				<div className={`${styles.content} p-4`} ref={(el) => { contentRefs.current[2] = el; }}>
+				<div
+					className={`${styles.content} p-4`}
+					ref={(el) => {
+						contentRefs.current[2] = el;
+					}}
+				>
 					Projects content
 				</div>
 			</div>

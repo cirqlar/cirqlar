@@ -31,7 +31,7 @@ export default function Home() {
 	const [transitionStarted, setTransitionStarted] = useState(false);
 
 	const linkRefs = useRef<(HTMLAnchorElement | null)[]>(
-		new Array(links.length)
+		new Array(links.length),
 	);
 
 	const focusTarget = (target: number) => {
@@ -56,29 +56,28 @@ export default function Home() {
 
 	return (
 		<main
-			className={`${styles.main} w-full h-full overflow-clip relative p-10 md:p-16 md:flex md:flex-col md:justify-between`}
+			className={`${styles.main} relative h-full w-full overflow-clip p-10 md:flex md:flex-col md:justify-between md:p-16`}
 		>
 			<div className="">
 				<h1 className="text-4xl font-bold uppercase">
 					<span>Ayanfeoluwa</span>
 					<br />
-					<span className="inline-block mt-6">Ibitoye</span>
+					<span className="mt-6 inline-block">Ibitoye</span>
 				</h1>
 			</div>
 
 			<nav
 				className={styles.nav}
 				style={{
-					"--nav-rot": `${(360 / links.length) * current + multiplier * 360
-						}deg`,
+					"--nav-rot": `${
+						(360 / links.length) * current + multiplier * 360
+					}deg`,
 				}}
 			>
 				<div className={styles.nav_images}>
 					<div className={styles.nav_center_wrapper}>
 						{/* Nav Center */}
-						<div
-							className={`${styles.nav_center} text-type/40`}
-						>
+						<div className={`${styles.nav_center} text-type/40`}>
 							<AILogo />
 						</div>
 					</div>
@@ -88,7 +87,9 @@ export default function Home() {
 						<div
 							key={href}
 							className={`${styles.nav_link_container} m-auto text-5xl md:text-6xl`}
-							style={{ "--item-rot": `${360 - (360 / links.length) * i}deg` }}
+							style={{
+								"--item-rot": `${360 - (360 / links.length) * i}deg`,
+							}}
 						>
 							{external ? (
 								<a
@@ -116,13 +117,17 @@ export default function Home() {
 									onClick={(e) => {
 										e.preventDefault();
 
-										if (window.matchMedia('(prefers-reduced-motion)').matches) {
-											router.push(href)
+										if (
+											window.matchMedia(
+												"(prefers-reduced-motion)",
+											).matches
+										) {
+											router.push(href);
 										} else {
 											setTransitionStarted(true);
 											// Do Anim Stuff
 											setTimeout(() => {
-												router.push(href)
+												router.push(href);
 											}, 600);
 										}
 									}}
@@ -148,8 +153,8 @@ export default function Home() {
 				<ArrowIcon className="md:rotate-90" />
 			</button>
 
-			<div className="flex mt-6 md:mt-0">
-				<div className="border-2 border-type rounded-sm flex gap-2 px-2 py-2">
+			<div className="mt-6 flex md:mt-0">
+				<div className="border-type flex gap-2 rounded-sm border-2 px-2 py-2">
 					<a href="#">
 						<EmailIcon />
 					</a>
@@ -162,9 +167,15 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div className={`absolute bottom-0 left-0 ${transitionStarted ? 'h-full' : 'h-0'} w-full bg-base-light overflow-hidden motion-safe:transition-all motion-safe:duration-500`}>
-				<div className={`${styles.nav_link_copy_container} flex justify-center items-center absolute bottom-[50vh] left-[50vw] -translate-x-1/2 translate-y-1/2`}>
-					<h2 className="text-5xl md:text-6xl text-black w-min">{links[current].text}</h2>
+			<div
+				className={`absolute bottom-0 left-0 ${transitionStarted ? "h-full" : "h-0"} bg-base-light w-full overflow-hidden motion-safe:transition-all motion-safe:duration-500`}
+			>
+				<div
+					className={`${styles.nav_link_copy_container} absolute bottom-[50vh] left-[50vw] flex -translate-x-1/2 translate-y-1/2 items-center justify-center`}
+				>
+					<h2 className="w-min text-5xl text-black md:text-6xl">
+						{links[current].text}
+					</h2>
 				</div>
 			</div>
 		</main>
