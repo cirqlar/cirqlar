@@ -77,7 +77,7 @@ export default function Home() {
 					<div className={styles.nav_center_wrapper}>
 						{/* Nav Center */}
 						<div
-							className={`${styles.nav_center} text-opacity-40 text-type`}
+							className={`${styles.nav_center} text-type/40`}
 						>
 							<AILogo />
 						</div>
@@ -96,7 +96,7 @@ export default function Home() {
 									ref={(el) => {
 										linkRefs.current[i] = el;
 									}}
-									className="hover:text-primary focus:text-primary-light outline-none"
+									className="hover:text-primary focus:text-primary-light outline-hidden"
 									onFocus={() => handleTarget(i)}
 								>
 									{text}
@@ -107,7 +107,7 @@ export default function Home() {
 									ref={(el) => {
 										linkRefs.current[i] = el;
 									}}
-									className="hover:text-primary focus:text-primary-light outline-none"
+									className="hover:text-primary focus:text-primary-light outline-hidden"
 									onFocus={() => {
 										handleTarget(i);
 										router.prefetch(href);
@@ -149,7 +149,7 @@ export default function Home() {
 			</button>
 
 			<div className="flex mt-6 md:mt-0">
-				<div className="border-2 border-type rounded flex gap-2 px-2 py-2">
+				<div className="border-2 border-type rounded-sm flex gap-2 px-2 py-2">
 					<a href="#">
 						<EmailIcon />
 					</a>

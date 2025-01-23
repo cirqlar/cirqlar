@@ -1,14 +1,16 @@
+@import 'tailwindcss/theme' theme(reference);
+
 .root {
 	--web-time: .5s;
 	--border-transition-time: .2s;
 	--border-thickness: 4px;
 	--length: min(min(100vh, 100vw), calc(128px + 400px));
-	--spacing: 64px;
-	--def-left: calc(100vw - var(--length) - var(--spacing));
+	--web-spacing: 64px;
+	--def-left: calc(100vw - var(--length) - var(--web-spacing));
 
 	--link-angle: 18deg;
 
-	@media (width < theme(screens.lg)) {
+	@media (width < theme(--breakpoint-lg)) {
 		--length: min(min(100vh, 100vw), calc(128px + 250px));
 	}
 
@@ -24,7 +26,7 @@
 	position: absolute;
 	top: calc(50% - var(--length)/2);
 
-	left: calc(100% - var(--length) - var(--spacing));
+	left: calc(100% - var(--length) - var(--web-spacing));
 	transition: left var(--web-time), opacity var(--web-time);
 
 	--extension: 50px;
@@ -34,12 +36,12 @@
 		opacity: 0;
 	}
 
-	@media (width < theme(screens.lg)) {
+	@media (width < theme(--breakpoint-lg)) {
 		--extension: 25px;
 		--box-angle: 32deg;
 	}
 
-	@media (width < theme(screens.md)) {
+	@media (width < theme(--breakpoint-md)) {
 		top: calc((var(--length) * -1 /2) + 120px + 40px + 56px);
 		left: calc((var(--length) * -1 /2) + 40px + 56px);
 	}
@@ -134,18 +136,18 @@
 }
 
 .up_left, .down_left, .up_right, .down_right {
-	background-color: theme(backgroundColor.base.DEFAULT);
+	background-color: var(--color-base);
 
 	:global(.main:not(.open)) & {
-		background-color: theme(backgroundColor.base.light);
+		background-color: var(--color-base-light);
 	}
 }
 
 .center {
-	background-color: theme(backgroundColor.base.DEFAULT);
+	background-color: var(--color-base);
 
 	:global(.main:not(.open)) & {
-		background-color: theme(backgroundColor.base.light);
+		background-color: var(--color-base-light);
 	}
 }
 
@@ -164,7 +166,7 @@
 		opacity: 0;
 	}
 
-	@media (width < theme(screens.md)) {
+	@media (width < theme(--breakpoint-md)) {
 		z-index: 20;
 	}
 }
@@ -183,7 +185,7 @@
 
 	transition: transform var(--web-time);
 
-	@media (width < theme(screens.lg)) {
+	@media (width < theme(--breakpoint-lg)) {
 		transform: rotate(calc(var(--rot-mult, 0) * var(--link-angle))) translate(100px, 0px);
 	}
 }
@@ -198,7 +200,7 @@
 
 	transform: translate(-50%, -50%);
 
-	@media (width < theme(screens.md)) {
+	@media (width < theme(--breakpoint-md)) {
 		/* Copied extra from .square */
 		top: calc(120px + 40px + 56px);
 		left: calc(40px + 56px);
