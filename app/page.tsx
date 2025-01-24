@@ -12,7 +12,6 @@ import Socials from "@/components/socials";
 const links = [
 	{ href: "/about", text: "About" },
 	{ href: "/webdev", text: "Web Dev" },
-	{ href: "/gamedev", text: "Game Dev" },
 	{
 		href: "https://docs.google.com/document/d/1R1DaFmChMq50IXdIXINOK4SNrklaIVKgVi7hUTG6-ls/edit?usp=sharing",
 		text: "Resume",
@@ -97,6 +96,8 @@ export default function Home() {
 									}}
 									className="hover:text-primary focus:text-primary-light outline-hidden"
 									onFocus={() => handleTarget(i)}
+									target="_blank"
+									rel="noreferrer"
 								>
 									{text}
 								</a>
