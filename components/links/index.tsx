@@ -2,8 +2,8 @@ import tw from "@/utilities/tw";
 import Link, { LinkProps } from "next/link";
 
 export const LinkInternal = (
-	props: LinkProps &
-		React.HTMLProps<HTMLAnchorElement> & { classNameOverride?: boolean },
+	props: React.HTMLProps<HTMLAnchorElement> &
+		LinkProps & { classNameOverride?: boolean },
 ) => {
 	const className = props.classNameOverride
 		? props.className
