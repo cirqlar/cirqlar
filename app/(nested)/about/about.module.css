@@ -32,7 +32,6 @@
 	width: 0;
 	overflow: hidden;
 	transition: width var(--duration-transition), opacity var(--duration-transition);
-	transition-behavior: allow-discrete;
 
 	--final-width: max(280px, 30vw);
 	--div-width: 2px;
