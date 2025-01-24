@@ -5,13 +5,14 @@
 	--border-transition-time: 0.2s;
 	--border-thickness: 4px;
 	--length: min(min(100vh, 100vw), calc(128px + 400px));
-	--web-spacing: 64px;
+	--web-spacing: 96px;
 	--def-left: calc(100vw - var(--length) - var(--web-spacing));
 
 	--link-angle: 18deg;
 
 	@media (width < theme(--breakpoint-lg)) {
 		--length: min(min(100vh, 100vw), calc(128px + 250px));
+		--web-spacing: 64px;
 	}
 
 	@media (prefers-reduced-motion) {
@@ -26,7 +27,7 @@
 	position: absolute;
 	top: calc(50% - var(--length) / 2);
 
-	left: calc(100% - var(--length) - var(--web-spacing));
+	left: var(--def-left);
 	transition:
 		left var(--web-time),
 		opacity var(--web-time);
@@ -225,6 +226,14 @@
 	:global(.main:not(.open)) & {
 		top: 50%;
 		left: 50%;
+	}
+}
+
+.content_container {
+	transition: opacity var(--web-time) var(--web-time), width var(--web-time);
+
+	:global(.main:not(.open)) & {
+		opacity: 0;
 	}
 }
 
