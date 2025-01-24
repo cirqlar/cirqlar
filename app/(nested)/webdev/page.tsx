@@ -25,6 +25,7 @@ export default function WebDevPage() {
 			styles.from_top,
 			styles.to_bottom,
 			styles.to_top,
+			styles.visible,
 		);
 		contentRefs.current[index]?.classList.remove(
 			styles.from_bottom,
@@ -84,7 +85,7 @@ export default function WebDevPage() {
 				></div>
 			</div>
 			<div className={styles.web_dev_container}>
-				<h2 className="w-min text-5xl text-black transition-all duration-[var(--web-time)] group-[.open]/client:scale-50 group-[.open]/client:text-inherit md:text-6xl">
+				<h2 className="w-min text-5xl transition-all duration-[var(--web-time)] group-[.open]/client:scale-50 md:text-6xl">
 					Web Dev
 				</h2>
 			</div>
@@ -92,7 +93,7 @@ export default function WebDevPage() {
 				className={`${styles.content_container} bg-base-light/50 md:max-w-1/2 relative z-20 mt-40 flex-1 overflow-hidden rounded-sm md:mr-[calc(var(--length)+16px)] md:mt-0 md:min-w-96`}
 			>
 				<div
-					className={`${styles.from_top} ${styles.content} px-4 py-5`}
+					className={`${styles.visible} ${styles.content} px-4 py-5`}
 					ref={(el) => {
 						contentRefs.current[0] = el;
 					}}

@@ -1,4 +1,5 @@
-import Link from "next/link";
+// import Link from "next/link";
+
 import Main from "./client_main";
 import Socials from "@/components/socials";
 
@@ -11,12 +12,15 @@ export default function NestedLayout({
 }>) {
 	return (
 		<Main>
-			<div className="title_block z-10 h-full w-full overflow-hidden">
-				<Link href="/" className="text-4xl font-bold uppercase">
+			<div
+				id="mainHeader"
+				className="title_block z-10 h-full w-full overflow-hidden"
+			>
+				{/* <Link href="/" className="text-4xl font-bold uppercase">
 					<span>Ayanfeoluwa</span>
 					<br />
 					<span className="mt-6 inline-block">Ibitoye</span>
-				</Link>
+				</Link> */}
 			</div>
 
 			{children}

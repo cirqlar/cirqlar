@@ -1,17 +1,10 @@
 .main {
-	--transition-time: 1s;
-
-	@media (prefers-reduced-motion) {
-		--transition-time: 0s;
-	}
-
 	display: grid;
 	grid-template-rows: 0px 1fr 0px;
-	/* grid-template-rows: 120px 1fr 45px; */
 	grid-template-columns: 1fr;
 	transition:
-		grid-template-rows var(--transition-time),
-		background-color var(--transition-time);
+		grid-template-rows var(--duration-transition),
+		background-color var(--duration-transition);
 	gap: 16px;
 
 	width: 100%;
@@ -20,13 +13,4 @@
 	&.open {
 		grid-template-rows: 120px 1fr 45px;
 	}
-
-	/* .title_block, .social_block {
-		opacity: 0;
-		transition: opacity var(--transition-time);
-
-		.main.open & {
-			opacity: 1;
-		}
-	} */
 }

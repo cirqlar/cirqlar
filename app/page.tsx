@@ -1,7 +1,7 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import AILogo from "@/components/logo";
 import ArrowIcon from "@/components/icons/arrow";
@@ -20,12 +20,33 @@ const links = [
 	{ href: "/other", text: "Others" },
 ];
 
+function getIndexFromParam(param: string | null): number {
+	switch (param) {
+		case "webdev":
+			return 1;
+		case "other":
+			return 3;
+		case "about":
+		default:
+			return 0;
+	}
+}
+
 export default function Home() {
 	const router = useRouter();
+	const params = useSearchParams();
 
-	const [current, setCurrent] = useState(0);
+	const [current, setCurrent] = useState(
+		getIndexFromParam(params.get("from")),
+	);
 	const [multiplier, setMult] = useState(0);
-	const [transitionStarted, setTransitionStarted] = useState(false);
+	const [transitionStarted, setTransitionStarted] = useState(
+		typeof params.get("from") === "string",
+	);
+
+	useEffect(() => {
+		setTransitionStarted(false);
+	}, []);
 
 	const linkRefs = useRef<(HTMLAnchorElement | null)[]>(
 		new Array(links.length),
@@ -165,7 +186,7 @@ export default function Home() {
 				<div
 					className={`${styles.nav_link_copy_container} absolute bottom-[50dvh] left-1/2 flex -translate-x-1/2 translate-y-1/2 items-center justify-center`}
 				>
-					<h2 className="w-min text-5xl text-black md:text-6xl">
+					<h2 className="w-min text-5xl md:text-6xl">
 						{links[current].text}
 					</h2>
 				</div>

@@ -1,25 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-	--color-base: #0f172a;
-	--color-base-light: #334155;
+	--color-base: var(--color-slate-900);
+	--color-base-light: var(--color-slate-700);
 
-	--color-primary: #15803d;
-	--color-primary-light: #86efac;
+	--color-primary: var(--color-green-700);
+	--color-primary-light: var(--color-green-300);
 
-	--color-type: #f1f5f9;
-	--color-type-dark: #0f172a;
+	--color-type: var(--color-slate-100);
+	--color-type-dark: var(--color-slate-300);
+
+	--duration-transition: .5s;
 }
 
-@layer base {
-	/* *,
-	::after,
-	::before,
-	::backdrop,
-	::file-selector-button {
-		border-color: var(--color-gray-200, currentColor);
-	} */
+@layer theme {
+	@media (prefers-reduced-motion) {
+		:root {
+			--duration-transition: 0s;
+		}
+	}
+}
 
+
+@layer base {
 	html,
 	body {
 		width: 100%;
