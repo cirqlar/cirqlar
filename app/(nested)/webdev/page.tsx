@@ -53,7 +53,7 @@ export default function WebDevPage() {
 							key={link}
 							onClick={() => handleClick(index)}
 							disabled={index == currentIndex}
-							className={`${styles.web_links} block text-xl font-bold disabled:text-2xl disabled:text-slate-300 lg:text-2xl lg:disabled:text-3xl`}
+							className={`${styles.web_links} disabled:text-type-dark block cursor-pointer text-xl font-bold disabled:cursor-auto disabled:text-2xl lg:text-2xl lg:disabled:text-3xl`}
 							style={{ "--rot-mult": `${index - currentIndex}` }}
 						>
 							{link}
