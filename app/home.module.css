@@ -34,7 +34,7 @@
 		--item-height: 100px;
 
 		--nav-center: calc(
-			100vh / 2 - var(--nav-size) / 2 + var(--item-radius)
+			100% / 2 - var(--nav-size) / 2 + var(--item-radius)
 		);
 		--center-margin: 100px;
 	}
