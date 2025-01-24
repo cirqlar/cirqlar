@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
+import { Suspense } from "react";
 
 const lato = Lato({
 	weight: ["300", "700"],
@@ -21,7 +22,7 @@ export default function RootLayout({
 		<html className="dark" lang="en">
 			<head></head>
 			<body className={`${lato.className} bg-base text-type antialiased`}>
-				{children}
+				<Suspense fallback={null}>{children}</Suspense>
 			</body>
 		</html>
 	);
