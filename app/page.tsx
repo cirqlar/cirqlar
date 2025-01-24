@@ -5,11 +5,9 @@ import { useRouter } from "next/navigation";
 
 import AILogo from "@/components/logo";
 import ArrowIcon from "@/components/icons/arrow";
-import EmailIcon from "@/components/icons/email";
-import GithubIcon from "@/components/icons/github";
-import LinkedinIcon from "@/components/icons/linkedin";
 
 import styles from "./home.module.css";
+import Socials from "@/components/socials";
 
 const links = [
 	{ href: "/about", text: "About" },
@@ -154,17 +152,10 @@ export default function Home() {
 			</button>
 
 			<div className="mt-6 flex md:mt-0">
-				<div className="border-type flex gap-2 rounded-sm border-2 px-2 py-2">
-					<a href="#">
-						<EmailIcon />
-					</a>
-					<a href="#">
-						<GithubIcon />
-					</a>
-					<a href="#">
-						<LinkedinIcon />
-					</a>
-				</div>
+				<Socials
+					classNameOverride
+					className="border-type flex gap-2 rounded-sm border-2 px-2 py-2"
+				/>
 			</div>
 
 			<div

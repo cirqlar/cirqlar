@@ -4,9 +4,17 @@ import LinkedinIcon from "@/components/icons/linkedin";
 import tw from "@/utilities/tw";
 
 export const socials = [
-	{ key: "email", href: "#", Icon: EmailIcon },
-	{ key: "github", href: "#", Icon: GithubIcon },
-	{ key: "linkedin", href: "#", Icon: LinkedinIcon },
+	{
+		key: "email",
+		href: "mailto:ibitoyeayanfeoluwa@gmail.com",
+		Icon: EmailIcon,
+	},
+	{ key: "github", href: "https://github.com/cirqlar", Icon: GithubIcon },
+	{
+		key: "linkedin",
+		href: "https://www.linkedin.com/in/ibitoyeayanfe/",
+		Icon: LinkedinIcon,
+	},
 ];
 
 export function SocialLink({ social }: { social: (typeof socials)[0] }) {

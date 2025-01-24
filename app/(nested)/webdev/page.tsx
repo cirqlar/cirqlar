@@ -168,7 +168,89 @@ export default function WebDevPage() {
 						contentRefs.current[2] = el;
 					}}
 				>
-					Projects content
+					<ul>
+						<li className="mb-4">
+							<div className="flex items-baseline">
+								<h3 className="mb-2 text-lg font-bold">
+									This Website
+								</h3>
+								<a
+									href="https://github.com/cirqlar/cirqlar"
+									target="_blank"
+									rel="noreferrer"
+									className="ml-2 text-xs underline underline-offset-4"
+								>
+									Github
+								</a>
+							</div>
+							<span className="mb-2 block">
+								Made with: Typescript, Nextjs, React, Tailwind
+							</span>
+						</li>
+						<li className="mb-4">
+							<div className="flex items-baseline">
+								<h3 className="mb-2 text-lg font-bold">
+									Ishrai
+								</h3>
+								<a
+									href="https://github.com/cirqlar/ishrai"
+									target="_blank"
+									rel="noreferrer"
+									className="ml-2 text-xs underline underline-offset-4"
+								>
+									Github
+								</a>
+								<a
+									href="https://ishrai.vercel.app/"
+									target="_blank"
+									rel="noreferrer"
+									className="ml-2 text-xs underline underline-offset-4"
+								>
+									Site
+								</a>
+							</div>
+							<p className="mb-2">
+								Freelance project. Marketing website made for an
+								NGO.
+							</p>
+							<span className="text-xs">
+								Made with: Nextjs, React, Tailwind, Forestry.io
+								(now TinaCMS)
+							</span>
+						</li>
+						<li className="mb-4">
+							<div className="flex items-baseline">
+								<h3 className="mb-2 text-lg font-bold">Greg</h3>
+								<a
+									href="https://github.com/cirqlar/greg"
+									target="_blank"
+									rel="noreferrer"
+									className="ml-2 text-xs underline underline-offset-4"
+								>
+									Github
+								</a>
+							</div>
+							<p className="mb-2">
+								An RSS aggregator and notifier made for personal
+								use.
+							</p>
+							<span className="text-xs">
+								Made with: Rust, Typescript, React, Vite,
+								Tailwind, SQL
+							</span>
+						</li>
+						<li>
+							See more on{" "}
+							<a
+								href="https://github.com/cirqlar"
+								target="_blank"
+								rel="noreferrer"
+								className="underline underline-offset-4"
+							>
+								Github
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
