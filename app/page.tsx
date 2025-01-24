@@ -163,7 +163,7 @@ export default function Home() {
 				className={`absolute bottom-0 left-0 ${transitionStarted ? "h-full" : "h-0"} bg-base-light w-full overflow-hidden motion-safe:transition-all motion-safe:duration-500`}
 			>
 				<div
-					className={`${styles.nav_link_copy_container} absolute bottom-[50vh] left-[50vw] flex -translate-x-1/2 translate-y-1/2 items-center justify-center`}
+					className={`${styles.nav_link_copy_container} absolute bottom-[50dvh] left-1/2 flex -translate-x-1/2 translate-y-1/2 items-center justify-center`}
 				>
 					<h2 className="w-min text-5xl text-black md:text-6xl">
 						{links[current].text}

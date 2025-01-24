@@ -1,7 +1,7 @@
 @import "tailwindcss/theme" theme(reference);
 
 .container {
-	top: 50vh;
+	top: 50%;
 	transform: translate(0, -50%);
 	transition:
 		transform var(--transition-time),
