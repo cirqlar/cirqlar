@@ -167,7 +167,8 @@
 
 	@media (width < theme(--breakpoint-md)) {
 		top: calc(50% - var(--width) / 2);
-		left: calc(50% + var(--item-width) / 2);
+		left: calc(50% - var(--item-width) / 2 - var(--width));
+		/* left: calc(50% + var(--item-width) / 2); */
 	}
 }
 
@@ -177,6 +178,7 @@
 	}
 
 	@media (width < theme(--breakpoint-md)) {
-		left: calc(50% - var(--item-width) / 2 - var(--width));
+		/* left: calc(50% - var(--item-width) / 2 - var(--width)); */
+		left: calc(50% + var(--item-width) / 2);
 	}
 }

@@ -19,7 +19,7 @@ export const socials = [
 
 export function SocialLink({ social }: { social: (typeof socials)[0] }) {
 	return (
-		<a href={social.href}>
+		<a href={social.href} className="hover:text-primary focus:text-primary">
 			<social.Icon />
 		</a>
 	);

@@ -28,7 +28,7 @@ export default function Main(props: { children?: React.ReactNode }) {
 				? createPortal(
 						<Link
 							href="/"
-							className="text-4xl font-bold uppercase underline underline-offset-4"
+							className="hover:text-primary focus:text-primary text-4xl font-bold uppercase underline underline-offset-4"
 							onClick={(e) => {
 								e.preventDefault();
 

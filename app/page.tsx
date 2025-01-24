@@ -115,7 +115,7 @@ export default function Home() {
 									ref={(el) => {
 										linkRefs.current[i] = el;
 									}}
-									className="hover:text-primary focus:text-primary-light outline-hidden"
+									className="hover:text-primary-dark focus:text-primary outline-hidden"
 									onFocus={() => handleTarget(i)}
 									target="_blank"
 									rel="noreferrer"
@@ -128,7 +128,7 @@ export default function Home() {
 									ref={(el) => {
 										linkRefs.current[i] = el;
 									}}
-									className="hover:text-primary focus:text-primary-light outline-hidden"
+									className="hover:text-primary-dark focus:text-primary outline-hidden"
 									onFocus={() => {
 										handleTarget(i);
 										router.prefetch(href);
@@ -161,16 +161,16 @@ export default function Home() {
 			</nav>
 
 			<button
-				className={styles.nav_button_top}
+				className={`${styles.nav_button_top} hover:text-primary focus:text-primary cursor-pointer`}
 				onClick={() => focusTarget(current + 1)}
 			>
-				<ArrowIcon className="rotate-180 md:-rotate-90" />
+				<ArrowIcon className="md:-rotate-90" />
 			</button>
 			<button
-				className={styles.nav_button_bottom}
+				className={`${styles.nav_button_bottom} hover:text-primary focus:text-primary cursor-pointer`}
 				onClick={() => focusTarget(current - 1)}
 			>
-				<ArrowIcon className="md:rotate-90" />
+				<ArrowIcon className="rotate-180 md:rotate-90" />
 			</button>
 
 			<div className="mt-6 flex md:mt-0">

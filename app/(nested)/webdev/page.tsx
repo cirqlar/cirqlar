@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import AILogo from "@/components/logo";
 
 import styles from "./webdev.module.css";
+import { LinkExternal } from "@/components/links";
 
 const links = ["Experience", "Skills", "Projects"];
 
@@ -53,7 +54,7 @@ export default function WebDevPage() {
 							key={link}
 							onClick={() => handleClick(index)}
 							disabled={index == currentIndex}
-							className={`${styles.web_links} disabled:text-type-dark block cursor-pointer text-xl font-bold disabled:cursor-auto disabled:text-2xl lg:text-2xl lg:disabled:text-3xl`}
+							className={`${styles.web_links} disabled:text-primary block cursor-pointer text-xl font-bold disabled:cursor-auto disabled:text-2xl lg:text-2xl lg:disabled:text-3xl`}
 							style={{ "--rot-mult": `${index - currentIndex}` }}
 						>
 							{link}
@@ -177,14 +178,14 @@ export default function WebDevPage() {
 								<h3 className="mb-2 text-lg font-bold">
 									This Website
 								</h3>
-								<a
+								<LinkExternal
 									href="https://github.com/cirqlar/cirqlar"
 									target="_blank"
 									rel="noreferrer"
 									className="ml-2 text-xs underline underline-offset-4"
 								>
 									Github
-								</a>
+								</LinkExternal>
 							</div>
 							<span className="mb-2 block">
 								Made with: Typescript, Nextjs, React, Tailwind
@@ -195,22 +196,22 @@ export default function WebDevPage() {
 								<h3 className="mb-2 text-lg font-bold">
 									Ishrai
 								</h3>
-								<a
+								<LinkExternal
 									href="https://github.com/cirqlar/ishrai"
 									target="_blank"
 									rel="noreferrer"
 									className="ml-2 text-xs underline underline-offset-4"
 								>
 									Github
-								</a>
-								<a
+								</LinkExternal>
+								<LinkExternal
 									href="https://ishrai.vercel.app/"
 									target="_blank"
 									rel="noreferrer"
 									className="ml-2 text-xs underline underline-offset-4"
 								>
 									Site
-								</a>
+								</LinkExternal>
 							</div>
 							<p className="mb-2">
 								Freelance project. Marketing website made for an
@@ -224,14 +225,14 @@ export default function WebDevPage() {
 						<li className="mb-4">
 							<div className="flex items-baseline">
 								<h3 className="mb-2 text-lg font-bold">Greg</h3>
-								<a
+								<LinkExternal
 									href="https://github.com/cirqlar/greg"
 									target="_blank"
 									rel="noreferrer"
 									className="ml-2 text-xs underline underline-offset-4"
 								>
 									Github
-								</a>
+								</LinkExternal>
 							</div>
 							<p className="mb-2">
 								An RSS aggregator and notifier made for personal
@@ -244,14 +245,14 @@ export default function WebDevPage() {
 						</li>
 						<li>
 							See more on{" "}
-							<a
+							<LinkExternal
 								href="https://github.com/cirqlar"
 								target="_blank"
 								rel="noreferrer"
 								className="underline underline-offset-4"
 							>
 								Github
-							</a>
+							</LinkExternal>
 						</li>
 					</ul>
 				</div>
