@@ -1,0 +1,184 @@
+@import "tailwindcss/theme" theme(reference);
+
+.main {
+	--nav-size: 100vh;
+	--item-radius: calc(100vh / 1.6);
+	--item-width: 200px;
+	--item-height: 130px;
+
+	--nav-center: calc(100vw / 2 - var(--nav-size) / 2 + var(--item-radius));
+	--center-margin: 50px;
+
+	--transition-time: 0.5s;
+
+	@media (prefers-reduced-motion) {
+		--transition-time: 0s;
+	}
+
+	@media (height >= theme(--breakpoint-md)) {
+		--center-margin: 150px;
+		--item-radius: calc(100vh / 1.7);
+	}
+
+	@media (height >= theme(--breakpoint-lg)) {
+		--center-margin: 250px;
+	}
+
+	@media (height >= theme(--breakpoint-xl)) {
+		--center-margin: 350px;
+	}
+
+	@media (width < theme(--breakpoint-md)) {
+		--nav-size: 100vw;
+		--item-radius: calc(100vw / 1.3);
+		--item-height: 100px;
+
+		--nav-center: calc(
+			100% / 2 - var(--nav-size) / 2 + var(--item-radius)
+		);
+		--center-margin: 100px;
+	}
+}
+
+.nav {
+	width: var(--nav-size);
+	height: var(--nav-size);
+
+	position: absolute;
+	top: 0;
+	left: var(--nav-center);
+
+	@media (width < theme(--breakpoint-md)) {
+		left: 0;
+		top: var(--nav-center);
+	}
+}
+
+.nav_images {
+	width: var(--nav-size);
+	height: var(--nav-size);
+
+	position: absolute;
+
+	perspective: 800px;
+}
+
+.nav_center_wrapper {
+	width: var(--nav-size);
+	height: var(--nav-size);
+
+	position: absolute;
+
+	transform-origin: center;
+	transform: rotateY(25deg);
+
+	@media (width < theme(--breakpoint-md)) {
+		transform: rotateX(-25deg);
+	}
+}
+
+.nav_center {
+	--center-size: calc(
+		var(--item-radius) * 2 - var(--item-width) - var(--center-margin)
+	);
+
+	width: var(--center-size);
+	height: var(--center-size);
+	border-radius: 100%;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%) rotateZ(var(--nav-rot));
+	transform-origin: center;
+	transition: transform var(--transition-time);
+
+	@media (width < theme(--breakpoint-md)) {
+		--center-size: calc(
+			var(--item-radius) * 2 - var(--item-height) - var(--center-margin)
+		);
+	}
+
+	svg {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.nav_container {
+	width: var(--nav-size);
+	height: var(--nav-size);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+
+	transform-origin: center;
+	transform: rotateZ(var(--nav-rot));
+
+	transition: transform var(--transition-time);
+}
+
+.nav_link_container {
+	position: absolute;
+	width: var(--item-width);
+	height: var(--item-height);
+	left: calc(50% - var(--item-width) / 2);
+	top: calc(50% - var(--item-height) / 2);
+	transform: rotate(var(--item-rot))
+		translate(calc(var(--item-radius) * -1), 0);
+	transform-origin: center;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media (width < theme(--breakpoint-md)) {
+		transform: rotate(var(--item-rot))
+			translate(0, calc(var(--item-radius) * -1));
+	}
+
+	a {
+		display: inline-block;
+		width: min-content;
+	}
+}
+
+.nav_link_copy_container {
+	width: var(--item-width);
+	height: var(--item-height);
+}
+
+.nav_button_top,
+.nav_button_bottom {
+	--width: 50px;
+	width: var(--width);
+	height: var(--width);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position: absolute;
+	top: calc(50% + var(--item-height) / 2 + 24px);
+	left: calc(50% - var(--width) / 2);
+
+	@media (width < theme(--breakpoint-md)) {
+		top: calc(50% - var(--width) / 2);
+		left: calc(50% - var(--item-width) / 2 - var(--width));
+		/* left: calc(50% + var(--item-width) / 2); */
+	}
+}
+
+.nav_button_bottom {
+	@media (width >= theme(--breakpoint-md)) {
+		top: calc(50% - var(--item-height) / 2 - var(--width) - 24px);
+	}
+
+	@media (width < theme(--breakpoint-md)) {
+		/* left: calc(50% - var(--item-width) / 2 - var(--width)); */
+		left: calc(50% + var(--item-width) / 2);
+	}
+}

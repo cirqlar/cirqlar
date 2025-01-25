@@ -1,0 +1,87 @@
+@import "tailwindcss/theme" theme(reference);
+
+.container {
+	/* Remove top padding and gap and half text from half height */
+	margin-top: calc(50dvh - var(--spacing) * 10 - 16px - 24px);
+	transition: transform var(--duration-transition), top var(--duration-transition), margin-top var(--duration-transition);
+	
+	@media (width >= theme(--breakpoint-md)) {
+		top: 50%;
+		margin-top: 0;
+		transform: translate(0, -50%);
+	}
+
+	@media (width < theme(--breakpoint-md)) {
+		:global(.main.open) & {
+			transform: translate(0, 0);
+			margin-top: 0;
+		}
+	}
+}
+
+.title {
+	color: var(--color-type-dark);
+	transition: color var(--duration-transition);
+
+	:global(.main.open) & {
+		color: inherit;
+	}
+}
+
+.text {
+	width: 0;
+	overflow: hidden;
+	transition: width var(--duration-transition), opacity var(--duration-transition);
+
+	--final-width: max(280px, 30vw);
+	--div-width: 2px;
+	--div-margin: 64px;
+	--div-full: calc(var(--div-width) + var(--div-margin) * 2);
+
+	@media (width < theme(--breakpoint-md)) {
+		width: 100%;
+		opacity: 0;
+
+		--final-width: min(320px, 50vh);
+		--div-margin: 16px;
+	}
+
+	.divider {
+		width: var(--div-width);
+		height: min(250px, 30vh);
+		margin: 0 var(--div-margin);
+		background-color: white;
+
+		@media (width < theme(--breakpoint-md)) {
+			height: var(--div-width);
+			width: 100%;
+			margin: var(--div-margin) 0;
+		}
+	}
+
+	.text_container {
+		width: min(calc(100% - var(--div-full)), var(--final-width));
+
+		@media (width < theme(--breakpoint-md)) {
+			width: 100%;
+		}
+	}
+
+	p {
+		display: inline-block;
+		width: var(--final-width);
+
+		@media (width < theme(--breakpoint-md)) {
+			width: auto;
+		}
+	}
+
+	:global(.main.open) & {
+		width: calc(var(--final-width) + var(--div-full));
+
+		@media (width < theme(--breakpoint-md)) {
+			width: 100%;
+			opacity: 1;
+		}
+	}
+}

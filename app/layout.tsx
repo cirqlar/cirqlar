@@ -1,43 +1,50 @@
-import './globals/globals.css'
+import type { Metadata, Viewport } from "next";
+import { Lato } from "next/font/google";
+import "./globals.css";
+import { Suspense } from "react";
 
-import { LATO_REGULAR } from './globals/font'
-import { Metadata } from 'next'
+const lato = Lato({
+	weight: ["300", "700"],
+	subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-	title: 'ÀYÀNFẸ',
+	title: "Ayanfe",
 	description: "Check out Ayanfe's website",
-	viewport: {
-		width: 'device-width',
-		initialScale: 1,
-	},
-	icons: '/favicon.ico',
+	icons: "/favicon.ico",
 
 	openGraph: {
-		type: 'website',
-		url: 'https://www.ayanfe.name/',
-		title: 'ÀYÀNFẸ',
+		type: "website",
+		url: "https://www.ayanfe.name/",
+		title: "Ayanfe",
 		description: "Check out Ayanfe's website",
-		images: 'https://www.ayanfe.name/social.png',
+		images: "https://www.ayanfe.name/social.png",
 	},
-	
+
 	twitter: {
-		card: 'summary_large_image',
-		title: 'ÀYÀNFẸ',
+		card: "summary_large_image",
+		title: "Ayanfe",
 		description: "Check out Ayanfe's website",
-		images: 'https://www.ayanfe.name/social.png',
+		images: "https://www.ayanfe.name/social.png",
 	},
-}
+};
+
+export const viewport: Viewport = {
+	width: "device-width",
+	initialScale: 1,
+};
 
 export default function RootLayout({
 	children,
-}: {
-	children: React.ReactNode
-}) {
+}: Readonly<{
+	children: React.ReactNode;
+}>) {
 	return (
-		<html lang="en" className={LATO_REGULAR.className}>
-			<body className='text-white'>
-				{children}
+		<html className="dark" lang="en">
+			<head></head>
+			<body className={`${lato.className} bg-base text-type antialiased`}>
+				<Suspense fallback={null}>{children}</Suspense>
 			</body>
 		</html>
-	)
+	);
 }
