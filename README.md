@@ -5,8 +5,8 @@ I'm a software developer mostly working with frontend frameworks and tools inclu
 
 ## Info
 - Programming since 2015
-- Web development for over 3 years
-- Employed as a frontend dev for 2+ years
+- Web development for over 4 years
+- Employed as a frontend dev for 4+ years
 - Proficient with Javascript, HTML5, CSS3, React, Nextjs, Typescript, Nodejs, Vuejs, React Native, Git, Graphql
 - Also worked with Ruby, Ruby on Rails, REST, Angular, Tailwind, Jest (testing framework), Python, C#, C++
 
