@@ -10,7 +10,7 @@
 	--color-type: var(--color-slate-100);
 	--color-type-dark: var(--color-slate-300);
 
-	--duration-transition: .5s;
+	--duration-transition: 0.5s;
 }
 
 @layer theme {
@@ -21,7 +21,6 @@
 	}
 }
 
-
 @layer base {
 	html,
 	body {
@@ -29,9 +28,5 @@
 		height: 100%;
 		overflow: hidden;
 		position: relative;
-	}
-
-	body {
-		font-family: Arial, Helvetica, sans-serif;
 	}
 }
