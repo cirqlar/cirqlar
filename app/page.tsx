@@ -404,7 +404,7 @@ export default function Home() {
 							href="#img_credits"
 							className="hover:text-primary-dark focus-visible:text-primary-dark cursor-pointer text-white focus-visible:outline-none"
 						>
-							Image Credits
+							Credits
 						</a>
 					</div>
 				</div>
