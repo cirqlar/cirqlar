@@ -46,7 +46,7 @@ export default function Home() {
 						href="#work"
 						className="hover:text-primary-dark focus-visible:text-primary-dark focus-visible:outline-none"
 					>
-						Work & Skills
+						Experience
 					</a>
 					<a
 						href="#projects"
@@ -104,7 +104,21 @@ export default function Home() {
 			<div className="bg-back/95 relative flex flex-col items-center gap-12 px-8 pb-28 pt-8">
 				<article className="prose prose-invert prose-lg">
 					<h2 id="about">About me</h2>
+					<p>Hi!</p>
 					<p>
+						I've been a professional Software Developer 5+ years.
+						I've so far worked majorly in web/frontend. I've also
+						done mobile dev using web tech and freelance fullstack
+						work.
+					</p>
+					<p>
+						I started programming at university in 2015 with
+						Javascript and Php. Not too long after that I joined a
+						group of my mates and did my first freelance project
+						with Ruby on Rails. After that I worked on a few other
+						freelance projects before landing my first job in 2020.
+					</p>
+					{/* <p>
 						Hello. I'm a Software Developer. I've been employed in
 						Frontend development for about{" "}
 						<span
@@ -130,7 +144,7 @@ export default function Home() {
 					<p>
 						I love thinking through problems, working on useful
 						software and learning new technology.
-					</p>
+					</p> */}
 				</article>
 				<article className="prose prose-invert prose-lg *:last:*:last:mb-0">
 					<h2 id="work">Experience</h2>
