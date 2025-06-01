@@ -42,7 +42,26 @@ export default function RootLayout({
 }>) {
 	return (
 		<html className="dark" lang="en">
-			<head></head>
+			<head>
+				<link
+					rel="preload"
+					href="/alower.svg"
+					as="image"
+					type="image/svg+xml"
+				/>
+				<link
+					rel="preload"
+					href="/aupper.svg"
+					as="image"
+					type="image/svg+xml"
+				/>
+				<link
+					rel="preload"
+					href="/iupper.svg"
+					as="image"
+					type="image/svg+xml"
+				/>
+			</head>
 			<body className={`${lato.className} bg-back text-type antialiased`}>
 				<Suspense fallback={null}>{children}</Suspense>
 			</body>
