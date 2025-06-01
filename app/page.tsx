@@ -1,12 +1,13 @@
+import { preload } from "react-dom";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 
 import { ALower, AUpper, ILower, IUpper } from "@/components/icons/ai";
 import Socials from "@/components/socials";
 
-import imgs from "@/public/bgbg.jpg";
-import webs from "@/public/web.jpg";
-import proj from "@/public/proj.jpg";
+import imgs from "@/app/images/bgbg.jpg";
+import webs from "@/app/images/web.jpg";
+import proj from "@/app/images/proj.jpg";
 import styles from "./home.module.css";
 
 const poppins = Poppins({
@@ -15,6 +16,22 @@ const poppins = Poppins({
 });
 
 export default function Home() {
+	preload("/aupper.svg", {
+		as: "image",
+		type: "image/svg+xml",
+		crossOrigin: "anonymous",
+	});
+	preload("/iupper.svg", {
+		as: "image",
+		type: "image/svg+xml",
+		crossOrigin: "anonymous",
+	});
+	preload("/alower.svg", {
+		as: "image",
+		type: "image/svg+xml",
+		crossOrigin: "anonymous",
+	});
+
 	return (
 		<main className="max-h-dvh scroll-pt-24 overflow-auto scroll-smooth supports-[not_(height:_100svh)]:max-h-screen">
 			<header className="fixed inset-x-0 top-0 z-10">
