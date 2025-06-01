@@ -46,10 +46,9 @@ export default function Home() {
 					<Image
 						sizes="50vw"
 						src={imgs}
-						className="mask-[url(/aupper.svg)] mask-bottom-right mask-size-[120px] sm:mask-size-[200px] lg:mask-size-[300px] mask-no-repeat group-hover:mask-size-[600%] group-focus-visible:mask-size-[600%] hidden h-full w-full object-cover transition-all duration-500 supports-[mask-image:_url()]:block"
+						className="mask-[url(/aupper.svg)] mask-bottom-right mask-size-[120px] sm:mask-size-[200px] lg:mask-size-[300px] mask-no-repeat group-hover:mask-size-[600%] group-focus-visible:mask-size-[600%] hidden h-full w-full bg-white object-cover transition-all duration-500 supports-[mask-image:_url()]:block"
 						alt="A foggy forest"
 						priority
-						placeholder="blur"
 					/>
 					<AUpper className="absolute bottom-0 right-0 h-[120px] w-[120px] origin-bottom-right transition-all duration-500 group-hover:scale-125 group-focus-visible:scale-125 supports-[mask-image:_url()]:hidden sm:h-[200px] sm:w-[200px] lg:h-[300px] lg:w-[300px]" />
 				</div>
@@ -57,10 +56,9 @@ export default function Home() {
 					<Image
 						sizes="50vw"
 						src={webs}
-						className="mask-[url(/iupper.svg)] mask-bottom-left mask-size-[120px] sm:mask-size-[200px] lg:mask-size-[300px] mask-no-repeat group-hover:mask-size-[600%] group-focus-visible:mask-size-[600%] hidden h-full w-full object-cover transition-all duration-500 supports-[mask-image:_url()]:block"
+						className="mask-[url(/iupper.svg)] mask-bottom-left mask-size-[120px] sm:mask-size-[200px] lg:mask-size-[300px] mask-no-repeat group-hover:mask-size-[600%] group-focus-visible:mask-size-[600%] hidden h-full w-full bg-white object-cover transition-all duration-500 supports-[mask-image:_url()]:block"
 						alt="Three hand-drawn and colorful wireframes in a row"
 						priority
-						placeholder="blur"
 					/>
 					<IUpper className="absolute bottom-0 left-0 h-[120px] w-[120px] origin-bottom-right transition-all duration-500 group-hover:scale-125 group-focus-visible:scale-125 supports-[mask-image:_url()]:hidden sm:h-[200px] sm:w-[200px] lg:h-[300px] lg:w-[300px]" />
 				</div>
@@ -68,10 +66,9 @@ export default function Home() {
 					<Image
 						sizes="50vw"
 						src={proj}
-						className="mask-[url(/alower.svg)] mask-top-right mask-size-[120px] sm:mask-size-[200px] lg:mask-size-[300px] mask-no-repeat group-hover:mask-size-[600%] group-focus-visible:mask-size-[600%] hidden h-full w-full object-cover transition-all duration-500 supports-[mask-image:_url()]:block"
+						className="mask-[url(/alower.svg)] mask-top-right mask-size-[120px] sm:mask-size-[200px] lg:mask-size-[300px] mask-no-repeat group-hover:mask-size-[600%] group-focus-visible:mask-size-[600%] hidden h-full w-full bg-white object-cover transition-all duration-500 supports-[mask-image:_url()]:block"
 						alt="A pile of game controllers seen from above"
 						priority
-						placeholder="blur"
 					/>
 					<ALower className="absolute right-0 top-0 h-[120px] w-[120px] origin-bottom-right transition-all duration-500 group-hover:scale-125 group-focus-visible:scale-125 supports-[mask-image:_url()]:hidden sm:h-[200px] sm:w-[200px] lg:h-[300px] lg:w-[300px]" />
 				</div>
