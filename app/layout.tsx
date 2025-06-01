@@ -48,18 +48,21 @@ export default function RootLayout({
 					href="/alower.svg"
 					as="image"
 					type="image/svg+xml"
+					crossOrigin="anonymous"
 				/>
 				<link
 					rel="preload"
 					href="/aupper.svg"
 					as="image"
 					type="image/svg+xml"
+					crossOrigin="anonymous"
 				/>
 				<link
 					rel="preload"
 					href="/iupper.svg"
 					as="image"
 					type="image/svg+xml"
+					crossOrigin="anonymous"
 				/>
 			</head>
 			<body className={`${lato.className} bg-back text-type antialiased`}>
