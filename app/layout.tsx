@@ -12,7 +12,6 @@ const lato = Lato({
 export const metadata: Metadata = {
 	title: "Ayanfe",
 	description: "Check out Ayanfe's website",
-	icons: "/favicon.ico",
 
 	openGraph: {
 		type: "website",
