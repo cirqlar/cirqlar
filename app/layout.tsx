@@ -5,6 +5,7 @@ import { Suspense } from "react";
 
 const lato = Lato({
 	weight: ["300", "700"],
+	style: ["normal", "italic"],
 	subsets: ["latin"],
 });
 
@@ -42,7 +43,7 @@ export default function RootLayout({
 	return (
 		<html className="dark" lang="en">
 			<head></head>
-			<body className={`${lato.className} bg-base text-type antialiased`}>
+			<body className={`${lato.className} bg-back text-type antialiased`}>
 				<Suspense fallback={null}>{children}</Suspense>
 			</body>
 		</html>
