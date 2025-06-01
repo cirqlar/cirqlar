@@ -180,7 +180,8 @@ export default function Home() {
 							Frontend Developer and was tasked with developing
 							web apps in line with stakeholder expectations. In
 							this role, I primarily made use of Javascript, HTML,
-							CSS, React, Bootstrap, React Testing Library, Jest.
+							CSS, React, Bootstrap, React Testing Library, Jest,
+							Figma.
 						</p>
 						<p>In this role, I was in charge of:</p>
 						<ul>
