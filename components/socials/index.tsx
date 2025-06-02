@@ -17,9 +17,19 @@ export const socials = [
 	},
 ];
 
-export function SocialLink({ social, className }: { social: (typeof socials)[0], className?: string }) {
+export function SocialLink({
+	social,
+	className,
+}: {
+	social: (typeof socials)[0];
+	className?: string;
+}) {
 	return (
-		<a href={social.href} className="hover:text-primary focus:text-primary">
+		<a
+			href={social.href}
+			aria-label={`${social.key} link`}
+			className="hover:text-primary focus:text-primary"
+		>
 			<social.Icon className={className} />
 		</a>
 	);
@@ -45,7 +55,11 @@ export default function Socials({
 	return (
 		<div className={classes}>
 			{socials.map((each) => (
-				<SocialLinkComponent social={each} key={each.key} className={iconClassName} />
+				<SocialLinkComponent
+					social={each}
+					key={each.key}
+					className={iconClassName}
+				/>
 			))}
 		</div>
 	);
