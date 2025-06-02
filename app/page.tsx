@@ -33,8 +33,7 @@ export default function Home() {
 	});
 
 	return (
-		// <main className="max-h-dvh scroll-pt-24 overflow-auto scroll-smooth supports-[not_(height:_100svh)]:max-h-screen">
-		<>
+		<main className="max-h-dvh scroll-pt-24 overflow-auto scroll-smooth supports-[not_(height:_100svh)]:max-h-screen">
 			<header className="fixed inset-x-0 top-0 z-10">
 				<nav className="bg-back/60 flex items-center justify-between gap-8 px-8 py-8 uppercase sm:mx-auto sm:mt-4 sm:w-fit sm:justify-center sm:rounded sm:py-4">
 					<a
@@ -104,9 +103,7 @@ export default function Home() {
 
 			<div className="bg-back/95 relative flex flex-col items-center gap-12 px-8 pb-28 pt-8">
 				<article className="prose prose-invert prose-lg">
-					<h2 id="about" className="scroll-mt-24">
-						About me
-					</h2>
+					<h2 id="about">About me</h2>
 					<p>Hi!</p>
 					<p>
 						I've been a professional Software Developer 5+ years.
@@ -150,9 +147,7 @@ export default function Home() {
 					</p> */}
 				</article>
 				<article className="prose prose-invert prose-lg *:last:*:last:mb-0">
-					<h2 id="work" className="scroll-mt-24">
-						Experience
-					</h2>
+					<h2 id="work">Experience</h2>
 
 					<section>
 						<h3>Helicarrier Development Studio</h3>
@@ -234,9 +229,7 @@ export default function Home() {
 					</section>
 				</article>
 				<article className="prose prose-invert prose-lg prose-a:hover:text-primary-dark prose-a:focus-visible:text-primary-dark prose-a:focus-visible:outline-none prose-a:underline-offset-4 *:last:*:last:mb-0">
-					<h2 id="projects" className="scroll-mt-24">
-						Projects
-					</h2>
+					<h2 id="projects">Projects</h2>
 
 					<section>
 						<h3>This website</h3>
@@ -332,9 +325,7 @@ export default function Home() {
 					</section>
 				</article>
 				<section className="prose prose-invert prose-lg prose-a:hover:text-primary-dark prose-a:focus-visible:text-primary-dark prose-a:focus-visible:outline-none prose-a:underline-offset-4 w-full *:last:*:last:mb-0">
-					<h3 id="img_credits" className="scroll-mt-24">
-						Image Credits
-					</h3>
+					<h3 id="img_credits">Image Credits</h3>
 
 					<ul>
 						<li>
@@ -418,7 +409,6 @@ export default function Home() {
 					</div>
 				</div>
 			</footer>
-		</>
-		// </main>
+		</main>
 	);
 }

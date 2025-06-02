@@ -40,14 +40,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html
-			className="dark relative h-full w-full overflow-auto scroll-smooth"
-			lang="en"
-		>
+		<html className="dark" lang="en">
 			<head></head>
-			<body
-				className={`${lato.className} bg-back text-type w-full antialiased`}
-			>
+			<body className={`${lato.className} bg-back text-type antialiased`}>
 				<Suspense fallback={null}>{children}</Suspense>
 			</body>
 		</html>
