@@ -5,13 +5,13 @@ import { Suspense } from "react";
 
 const lato = Lato({
 	weight: ["300", "700"],
+	style: ["normal", "italic"],
 	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
 	title: "Ayanfe",
 	description: "Check out Ayanfe's website",
-	icons: "/favicon.ico",
 
 	openGraph: {
 		type: "website",
@@ -42,7 +42,7 @@ export default function RootLayout({
 	return (
 		<html className="dark" lang="en">
 			<head></head>
-			<body className={`${lato.className} bg-base text-type antialiased`}>
+			<body className={`${lato.className} bg-back text-type antialiased`}>
 				<Suspense fallback={null}>{children}</Suspense>
 			</body>
 		</html>

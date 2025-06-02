@@ -1,8 +1,9 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
-	--color-base: var(--color-slate-900);
-	--color-base-light: var(--color-slate-700);
+	--color-back: var(--color-slate-900);
+	--color-back-light: var(--color-slate-700);
 
 	--color-primary-dark: var(--color-green-700);
 	--color-primary: var(--color-green-300);
@@ -10,7 +11,7 @@
 	--color-type: var(--color-slate-100);
 	--color-type-dark: var(--color-slate-300);
 
-	--duration-transition: .5s;
+	--duration-transition: 0.5s;
 }
 
 @layer theme {
@@ -21,7 +22,6 @@
 	}
 }
 
-
 @layer base {
 	html,
 	body {
@@ -29,9 +29,5 @@
 		height: 100%;
 		overflow: hidden;
 		position: relative;
-	}
-
-	body {
-		font-family: Arial, Helvetica, sans-serif;
 	}
 }
