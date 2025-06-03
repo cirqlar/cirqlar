@@ -151,7 +151,7 @@ export default function Home() {
 
 					<section>
 						<h3>Helicarrier Development Studio</h3>
-						<p className="text-base italic">08/2021 - Present</p>
+						<p className="text-base italic">08/2021 - 06/2025</p>
 
 						<p>
 							A financial technology company developing software
