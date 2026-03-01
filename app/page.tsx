@@ -106,45 +106,43 @@ export default function Home() {
 					<h2 id="about">About me</h2>
 					<p>Hi!</p>
 					<p>
-						I've been a professional Software Developer 5+ years.
-						I've so far worked majorly in web/frontend. I've also
-						done mobile dev using web tech and freelance fullstack
-						work.
+						I'm a Software Developer with over 5 years of
+						experience, including Frontend, Full Stack and Mobile
+						development. I have been involved in and responsible for
+						the entire software development pipeline, including:
+						owned the development and maintenance of major features,
+						handled bug fixing and performance improvements, and
+						collaborated with teammates asynchronously using version
+						control systems and async messaging tools. I am a highly
+						motivated and passionate developer with tons of skills
+						and experience, both personal and professional.
 					</p>
+					<ul>
+						<li>
+							Owning the development and maintainance of features
+							used by large and active userbases
+						</li>
+						<li>Handling bug fixing and perfomance improvements</li>
+						<li>
+							Collaborating with teammates asynchronously using
+							version control systems and async messaging tools
+						</li>
+					</ul>
 					<p>
-						I started programming at university in 2015 with
-						Javascript and Php. Not too long after that I joined a
-						group of my mates and did my first freelance project
-						with Ruby on Rails. After that I worked on a few other
-						freelance projects before landing my first job in 2020.
+						I have worked professionally with many tools and
+						technologies such as React, Typescript, Javascript,
+						Next.js, CSS, Node.js, Express.js, among others. And
+						personally, I have also interacted with many more tools,
+						including Rust, C++, C#, and tried to stay abreast of
+						developments in the software development industry. I
+						have tried my best not just to learn useful skills, but
+						also to understand the technology behind them deeply in
+						order to make better decisions in their use and easily
+						deal with issues that arise in my work. enjoy working on
+						complex and interesting problems that have a positive
+						impact on people's lives and collaborating with people
+						smarter than I am.
 					</p>
-					{/* <p>
-						Hello. I'm a Software Developer. I've been employed in
-						Frontend development for about{" "}
-						<span
-							// href="/webdev"
-							className="underline underline-offset-4"
-						>
-							5 years
-						</span>{" "}
-						and I've been programming for much longer.
-					</p>
-					<p>
-						I've got tons of professional experience using frontend
-						and frontend-related tech like Typescript, React, Vue,
-						Tailwind and I've worked with{" "}
-						<span
-							// href="/webdev"
-							className="underline underline-offset-4"
-						>
-							a lot more
-						</span>{" "}
-						in my free time.
-					</p>
-					<p>
-						I love thinking through problems, working on useful
-						software and learning new technology.
-					</p> */}
 				</article>
 				<article className="prose prose-invert prose-lg *:last:*:last:mb-0">
 					<h2 id="work">Experience</h2>
@@ -155,31 +153,34 @@ export default function Home() {
 
 						<p>
 							A financial technology company developing software
-							to connect Africa to the world. I work as a Frontend
-							Developer and am tasked with developing and
-							maintaining web and mobile apps. In this role, I
-							primarily make use of Javascript/Typescript, HTML,
+							to connect Africa to the world. I worked as a
+							Software Developer and was tasked with developing
+							and maintaining web and mobile apps. In this role, I
+							primarily made use of Javascript/Typescript, HTML,
 							CSS, React, Next.js, React Native, SCSS, GraphQl and
-							REST apis. I also work on projects using Vue.js,
+							REST apis. I also worked on projects using Vue.js,
 							Express.js, Styled Components and more.
 						</p>
-						<p>In this role, I have been in charge of:</p>
+						<p>In this role, I was in charge of:</p>
 						<ul>
 							<li>
-								Implementing important/load-bearing features for
-								both web and mobile
+								Working with stakeholders, designers, QA and
+								backend engineers to bring new features to users
 							</li>
 							<li>
-								Spearheading large refactors to address
-								technical debt
+								Working with customer support and directly with
+								customers to triage and fix user issues and bug
+								reports
 							</li>
 							<li>
-								Handling deployment of mobile apps to the App
-								and Play Stores
+								Managing and minimizing technical debt and
+								improving developer efficiency by suggesting and
+								completing refactors and upgrades of code and
+								the tech stack
 							</li>
 							<li>
-								Evaluating new tech to improve development
-								efficiency
+								Managing web and mobile app releases, including
+								releasing new app builds to App Stores
 							</li>
 						</ul>
 					</section>
@@ -200,13 +201,11 @@ export default function Home() {
 						<p>In this role, I was in charge of:</p>
 						<ul>
 							<li>
-								Quickly and accurately translating designs and
-								stakeholder guidlines into well architected
-								frontend apps
+								Translating designs and stakeholder guidlines
+								into well architected frontend apps
 							</li>
 							<li>
-								Developing tests to ensure continued product
-								stability
+								Developing tests and ensuring high code coverage
 							</li>
 						</ul>
 					</section>
