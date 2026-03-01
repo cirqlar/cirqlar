@@ -110,12 +110,6 @@ export default function Home() {
 						experience, including Frontend, Full Stack and Mobile
 						development. I have been involved in and responsible for
 						the entire software development pipeline, including:
-						owned the development and maintenance of major features,
-						handled bug fixing and performance improvements, and
-						collaborated with teammates asynchronously using version
-						control systems and async messaging tools. I am a highly
-						motivated and passionate developer with tons of skills
-						and experience, both personal and professional.
 					</p>
 					<ul>
 						<li>
