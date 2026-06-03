@@ -1,1 +1,1 @@
-export const THEME_LOCAL_KEY = 'themethemetheme';
+export const THEME_LOCAL_KEY = "themethemetheme";

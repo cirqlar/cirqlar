@@ -16,10 +16,7 @@ export default function AILogo(props: { className?: string }) {
 				d="M774 404C774 597.565 625.363 756.414 436 772.636V435H583V494H524V552H701V494H642V315H701V257H524V315H583V374H436V35.3646C625.363 51.5865 774 210.435 774 404Z"
 				fill="currentColor"
 			/>
-			<path
-				d="M257 354.389L245.24 374H257V354.389Z"
-				fill="currentColor"
-			/>
+			<path d="M257 354.389L245.24 374H257V354.389Z" fill="currentColor" />
 			<path
 				fillRule="evenodd"
 				clipRule="evenodd"

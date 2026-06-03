@@ -50,7 +50,7 @@ export default function Socials({
 }: SocialsProps) {
 	const classes = classNameOverride
 		? className
-		: tw`border-type flex w-min gap-2 rounded-sm border-2 px-2 py-2 ${className}`;
+		: tw`flex w-min gap-2 rounded-sm border-2 border-type px-2 py-2 ${className}`;
 
 	return (
 		<div className={classes}>

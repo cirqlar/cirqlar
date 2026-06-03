@@ -1,6 +1,0 @@
-{
-	"plugins": ["prettier-plugin-tailwindcss"],
-	"tailwindFunctions": ["tw"],
-	"tailwindAttributes": ["iconClassname"],
-	"tailwindStylesheet": "./app/global.css"
-}

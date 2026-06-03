@@ -1,0 +1,10 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"sortTailwindcss": {
+		"stylesheet": "./app/globals.css",
+		"functions": ["tw", "clsx", "cva", "cx", "cn"],
+		"attributes": ["iconClassname"]
+	},
+	"printWidth": 80,
+	"ignorePatterns": []
+}
