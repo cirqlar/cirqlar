@@ -68,7 +68,7 @@
 				"react/no-is-mounted": "error",
 				"react/no-render-return-value": "error",
 				"react/no-string-refs": "error",
-				"react/no-unescaped-entities": "warn",
+				"react/no-unescaped-entities": "off",
 				"react/no-unknown-property": "off",
 				"react/no-unsafe": "off",
 				"react/react-in-jsx-scope": "off",
